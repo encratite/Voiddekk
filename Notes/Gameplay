@@ -41,23 +41,42 @@ That also immediately makes the resource available for the current turn.
 The following overview provides a list of the resource types and their common uses, although these aren't absolutes.
 
 1. Manpower
--simple units
+-used to produce infantry units
+-component of upgrades for infantry units
 
-2. Steel
--upgrades
--both simple and advanced units
+2. Industry
+-used to produce armoured units and air units
+-component of upgrades for armoured units and air units
 
-3. Oil
--advanced units
-
-4. Technology
+3. Technology
 -special abilities
--advanced units
+-component of advanced units
+-component of upgrades
 
-Generic unit flags:
+4. Command
+-special abilities
+-component of advanced units
 
-Shock troops: unit deploys instantly and can perform combat actions the same turn its card was played instead of having a downtime of one turn
-Overrun: remaining damage is applied to the opponent himself in case the defenders blocking this unit all perish in the attack
-Fast recovery: unit is capable of attacking in one turn and defending in the next turn, whereas regular units would still be in recovery after the attack, without being able to defend
+Primary properties of units:
+
+1. Attack (integer)
+2. Defence (integer)
+3. Type
+
+If attack is <= 0, this unit is unable to attack.
+If defence is <= 0, this unit is unable to defend against attacks.
+
+Unit types:
+
+1. Infantry
+2. Armoured
+3. Air
+
+Generic optional unit flags:
+
 Air: attacks by air units can only be defended against by other air units or anti-air units
 Anti-air: anti-air units are ground units capable of defending against air attacks
+Fast recovery: unit is capable of attacking in one turn and defending in the next turn, whereas regular units would still be in recovery after the attack, without being able to defend
+Overrun: remaining damage is applied to the opponent themself should the defenders blocking this unit all perish in the attack
+Shock troops: unit deploys instantly and can perform combat actions the same turn its card was played instead of having a downtime of one turn
+Suicide: this unit dies once it has performed an attack
