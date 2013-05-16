@@ -17,6 +17,7 @@ However, they cannot be changed during the game.
 
 Each player starts out with 20 life and the hand they have chosen.
 One player is given the first turn and may play their cards first.
+The player's current hand and their stacks are concealed from their opponent.
 Only cards from a player's current hand may be played.
 At the end of each turn a player must draw a card from one of their stacks, if it still contains cards.
 If the player's hand is empty and all stacks have been used up at this point, the player loses the game.
@@ -76,7 +77,9 @@ Generic optional unit flags:
 
 Air: attacks by air units can only be defended against by other air units or anti-air units
 Anti-air: anti-air units are ground units capable of defending against air attacks
+Cover: unit cannot be targeted by single target abilities
 Fast recovery: unit is capable of attacking in one turn and defending in the next turn, whereas regular units would still be in recovery after the attack, without being able to defend
+Infiltration: attacks by this unnit cannot be defended against
 Overrun: remaining damage is applied to the opponent themself should the defenders blocking this unit all perish in the attack
 Shock troops: unit deploys instantly and can perform combat actions the same turn its card was played instead of having a downtime of one turn
 Suicide: this unit dies once it has performed an attack
