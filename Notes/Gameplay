@@ -32,3 +32,24 @@ Each turn consists of the following sequence of phases:
 During the main phase the current player may play non-combat cards.
 In the offensive phase the current player declares their attackers and may play offensive ability cards.
 The opponent may then choose to defend against these attacks using their units and defensive ability cards in the defensive phase.
+
+Each player has certain resources that can be gradually built up with resource cards.
+They can be consumed during both one's own turn and the opponent's turn.
+They are only refreshed at the beginning of that player's turn.
+Only one resource card may be played in a player's main phase.
+That also immediately makes the resource available for the current turn.
+The following overview provides a list of the resource types and their common uses, although these aren't absolutes.
+
+1. Manpower
+-simple units
+
+2. Steel
+-upgrades
+-both simple and advanced units
+
+3. Oil
+-advanced units
+
+4. Technology
+-special abilities
+-advanced units
