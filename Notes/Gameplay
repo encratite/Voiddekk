@@ -1,0 +1,34 @@
+This is a turn based card game strongly influenced by Magic the Gathering.
+My goal in this design was to eliminate all sources of randomness/non-determinism and also to avoid making single cards too powerful.
+
+The game is played by two players who attempt to reduce the life of the other player to zero or less by using their cards wisely.
+Each player enters the game with a deck of 40 cards in total.
+Each deck has the following structure:
+
+-an initial hand of 7 cards
+-a main stack of 25 cards
+-an extended stack of 8 cards
+
+These cards may be any of the cards that are part of the game.
+However, most of them are subject to certain limits in their number per deck.
+Furthermore, the same card may not be featured more than four times per set.
+The the initial hand, the stacks and also the order within the stacks are freely chosen by each player.
+However, they cannot be changed during the game.
+
+Each player starts out with 20 life and the hand they have chosen.
+One player is given the first turn and may play their cards first.
+Only cards from a player's current hand may be played.
+At the end of each turn a player must draw a card from one of their stacks, if it still contains cards.
+If the player's hand is empty and all stacks have been used up at this point, the player loses the game.
+Stacks are structured such that the more expensive cards (i.e. they consume many resources) are closer to the bottom of each stack as they won't be of much use early in the game anyways.
+The point of the extended stack is enabling players to counter their opponent in a more controlled way instead of being forced to draw cards in a purely one-dimensional manner.
+
+Each turn consists of the following sequence of phases:
+
+1. Main phase
+2. Offensive phase
+3. Defensive phase
+
+During the main phase the current player may play non-combat cards.
+In the offensive phase the current player declares their attackers and may play offensive ability cards.
+The opponent may then choose to defend against these attacks using their units and defensive ability cards in the defensive phase.
