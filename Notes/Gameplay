@@ -34,6 +34,14 @@ During the main phase the current player may play non-combat cards.
 In the offensive phase the current player declares their attackers and may play offensive ability cards.
 The opponent may then choose to defend against these attacks using their units and defensive ability cards in the defensive phase.
 
+These are the types of cards available:
+
+1. Resource: makes new resources available for playing more cards whenever it's that player's turn
+2. Unit: deploys a unit on the battlefield that can attack and inflict damage on the enemy player
+3. Unit upgrade: grants bonuses and abilities to units
+4. Combat ability: one-time usable bonus that may be used for both attacking and depending, depending on the card
+5. Scientific progress: persistent global bonus for a player
+
 Each player has certain resources that can be gradually built up with resource cards.
 They can be consumed during both one's own turn and the opponent's turn.
 They are only refreshed at the beginning of that player's turn.
