@@ -53,3 +53,11 @@ The following overview provides a list of the resource types and their common us
 4. Technology
 -special abilities
 -advanced units
+
+Generic unit flags:
+
+Shock troops: unit deploys instantly and can perform combat actions the same turn its card was played instead of having a downtime of one turn
+Overrun: remaining damage is applied to the opponent himself in case the defenders blocking this unit all perish in the attack
+Fast recovery: unit is capable of attacking in one turn and defending in the next turn, whereas regular units would still be in recovery after the attack, without being able to defend
+Air: attacks by air units can only be defended against by other air units or anti-air units
+Anti-air: anti-air units are ground units capable of defending against air attacks
