@@ -13,6 +13,7 @@ These cards may be any of the cards that are part of the game.
 However, most of them are subject to certain limits in their number per deck.
 Furthermore, the same card may not be featured more than four times per set.
 The the initial hand, the stacks and also the order within the stacks are freely chosen by each player.
+A player's hand and their stacks are only visible to the owner.
 However, they cannot be changed during the game.
 
 Each player starts out with 20 life and the hand they have chosen.
@@ -39,7 +40,7 @@ These are the types of cards available:
 1. Resource: makes new resources available for playing more cards whenever it's that player's turn
 2. Unit: deploys a unit on the battlefield that can attack and inflict damage on the enemy player
 3. Unit upgrade: grants bonuses and abilities to units
-4. Combat ability: one-time usable bonus that may be used for both attacking and depending, depending on the card
+4. Ability: one-time use during main phase or defensive phase
 5. Scientific progress: persistent global bonus for a player
 
 Each player has certain resources that can be gradually built up with resource cards.
@@ -68,12 +69,10 @@ The following overview provides a list of the resource types and their common us
 
 Primary properties of units:
 
-1. Attack (integer)
-2. Defence (integer)
-3. Type
-
-If attack is <= 0, this unit is unable to attack.
-If defence is <= 0, this unit is unable to defend against attacks.
+1. Type
+2. Damage vs. ground units (integer)
+3. Damage vs. air units (integer)
+4. Life (integer)
 
 Unit types:
 
@@ -81,12 +80,13 @@ Unit types:
 2. Armoured
 3. Air
 
+If damage is zero or less, this unit is unable to attack that particular unit type (ground/air).
+If a unit's life is reduced to zero or less, it dies and is removed from the game.
+
 Generic optional unit flags:
 
-Air: attacks by air units can only be defended against by other air units or anti-air units
-Anti-air: anti-air units are ground units capable of defending against air attacks
 Cover: unit cannot be targeted by single target abilities
-Fast recovery: unit is capable of attacking in one turn and defending in the next turn, whereas regular units would still be in recovery after the attack, without being able to defend
+Fast recovery: unit is capable of attacking in one turn without going out of combat, it can defend in the next turn, whereas regular units would still be in recovery after the attack, without being able to defend
 Infiltration: attacks by this unnit cannot be defended against
 Overrun: remaining damage is applied to the opponent themself should the defenders blocking this unit all perish in the attack
 Shock troops: unit deploys instantly and can perform combat actions the same turn its card was played instead of having a downtime of one turn
