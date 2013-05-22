@@ -5,8 +5,8 @@ The game is played by two players who attempt to reduce the life of the other pl
 Each player enters the game with a deck of 40 cards in total.
 Each deck has the following structure:
 
--an initial hand of 7 cards
--a main stack of 25 cards
+-an initial hand of 8 cards
+-a main stack of 24 cards
 -an extended stack of 8 cards
 
 These cards may be any of the cards that are part of the game.
@@ -85,7 +85,7 @@ If a unit's life is reduced to zero or less, it dies and is removed from the gam
 
 Generic optional unit flags:
 
-Cover: unit cannot be targeted by single target abilities
+Cover: unit cannot be targeted by single target abilities, nor does it take damage from area of effect abilities
 Fast recovery: unit is capable of attacking in one turn without going out of combat, it can defend in the next turn, whereas regular units would still be in recovery after the attack, without being able to defend
 Infiltration: attacks by this unnit cannot be defended against
 Overrun: remaining damage is applied to the opponent themself should the defenders blocking this unit all perish in the attack

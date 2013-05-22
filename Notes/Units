@@ -19,7 +19,7 @@ Stats: 1/0/1
 Special rules: Cover
 Ability: Snipe, 1 Infantry, deal 2 damage to an enemy infantry unit, puts the sniper out of combat
 
-Name: RPG Squad
+Name: RPG Infantry
 Limit: 4
 Resources: 2 Infantry
 Type: Infantry

@@ -1,0 +1,34 @@
+Name: Population Growth
+Limit: 3
+Resources: 2 Infantry
+Effect: You may play an additional infantry resource card this round
+
+Name: Industrial Revolution
+Limit: 3
+Resources: 2 Industry
+Effect: You may play an additional industry resource card this round
+
+Name: Age of Science
+Limit: 3
+Resources: 2 Technology
+Effect: You may play an additional technology resource card this round
+
+Name: Leadership
+Limit: 3
+Resources: 2 Command
+Effect: You may play an additional command resource card this round
+
+Name: Air raid
+Limit: 3
+Resources: 3 Technology
+Effect: All enemy units take 1 damage
+
+Name: Carpet bombing
+Limit: 2
+Resources: 4 Technology
+Effect: All enemy units take 2 damage
+
+Name: Search and Destroy
+Limit: 4
+Resources: 1 Command
+Effect: A unit under your command attacks an enemy unit of your own choosing, puts your unit out of combat
