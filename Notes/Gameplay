@@ -8,38 +8,28 @@ These cards may be any of the cards that are part of the game.
 However, most of them are subject to certain limits in their number per deck.
 A player's hand and their stacks are only visible to the owner.
 
-Each player starts out with 20 life and and an initial hand of 6 cards, drawn from the top of the deck.
+Each player starts out with 100 life and an initial hand of 6 cards, drawn from the top of the deck.
 One player is given the first turn and may play their cards first.
 The player's current hand and the stack stacks are concealed from their opponent.
 Only cards from a player's current hand may be played.
 At the beginning of each new turn (that is, not the first one) the active player must draw a card from one of the top 3 cards of their stack.
 If the player's hand is empty and all stacks have been used up at this point, the player loses the game.
-Stacks are likely structured such that the more expensive cards (i.e. they consume many resources) are closer to the bottom of each stack as they won't be of much use early in the game anyways.
+Stacks are likely structured such that the more expensive cards (i.e. they consume large amounts of resources) are closer to the bottom of each stack as they won't be of much use early in the game anyways.
 The point of the 3 card rule is enabling players to counter their opponent in a more controlled way instead of being forced to draw cards in a purely one-dimensional manner.
-
-Each turn consists of the following sequence of phases:
-
-1. Main phase
-2. Offensive phase
-3. Defensive phase
-
-During the main phase the current player may play any card that is not explicitly reserved for the defensive phase.
-In the offensive phase the current player may declare their attackers.
-The opponent may then choose to defend against these attacks using their units and defensive ability cards in the defensive phase.
+Players may only play cards during their own turn.
 
 These are the types of cards available:
 
-1. Resource: makes new resources available for playing more cards whenever it's that player's turn
+1. Resource: generates resources
 2. Unit: deploys a unit on the battlefield that can attack and inflict damage on the enemy player
 3. Unit upgrade: grants bonuses and abilities to units
-4. Ability: one-time use during main phase or defensive phase
+4. Ability: one-time use
 5. Scientific progress: persistent global bonus for a player
 
 Each player has certain resources that can be gradually built up with resource cards.
-They can be consumed during both one's own turn and the opponent's turn.
-They are only refreshed at the beginning of that player's turn.
-Only one resource card may be played in a player's main phase.
-That also immediately makes the resource available for the current turn.
+For each resource card deployed, that amount is granted to the player at the end of every turn.
+Resources add up and can be stored for later use in one of the following turns.
+Only one resource card may be played per turn.
 The following overview provides a list of the resource types and their common uses, although these aren't absolutes.
 
 1. Manpower
@@ -59,27 +49,38 @@ The following overview provides a list of the resource types and their common us
 -special abilities
 -component of advanced units
 
+Units are deployed in one of 5 sectors of the battlefield.
+These represent independent segments of the frontline.
+The units of a player deployed in a sector are arranged in an ordered sequence, a queue, in which only one unit is facing the enemy.
+Only the unit in the front can cause damage using regular attacks and can take damage from regular attacks.
+On deployment a unit is initially out of combat and cannot perform any attacks or use its special abilities (should it have any) in the current turn.
+Units can be deployed to any position in the queue.
+Should the first unit in the queue not be out of combat at the end of a turn of the owner, it automatically deals damage to the first enemy unit in that sector.
+If there is no enemy unit in that sector, the damage is dealt to the enemy player instead.
+Damage dealt to a unit is permanent.
+Life does not automatically recover at the end of a turn.
+
 Primary properties of units:
 
 1. Type
-2. Damage vs. ground units (integer)
-3. Damage vs. air units (integer)
-4. Life (integer)
+2. Damage (integer)
+3. Life (integer)
+4. Unit flags (optional)
+5. Abilities (optional)
+6. Special rules (optional)
 
 Unit types:
 
 1. Infantry
 2. Armoured
-3. Air
 
-If damage is zero or less, this unit is unable to attack that particular unit type (ground/air).
+If damage is zero or less, this unit is unable to attack.
 If a unit's life is reduced to zero or less, it dies and is removed from the game.
 
-Generic optional unit flags:
+Unit flags:
 
 Cover: unit cannot be targeted by single target abilities, nor does it take damage from area of effect abilities
-Fast recovery: unit is capable of attacking in one turn without going out of combat, it can defend in the next turn, whereas regular units would still be in recovery after the attack, without being able to defend
-Infiltration: attacks by this unnit cannot be defended against
+Infiltration: attacks by this pass enemy units in that sector and directly deal damage to the player
 Overrun: remaining damage is applied to the opponent themself should the defenders blocking this unit all perish in the attack
-Shock troops: unit deploys instantly and can perform combat actions the same turn its card was played instead of having a downtime of one turn
+Shock troops: this unit is not out of combat after deployment
 Suicide: this unit dies once it has performed an attack
