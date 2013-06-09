@@ -2,7 +2,7 @@ This is a turn-based strategy game played with cards, influenced by games like M
 My goal in this design was to eliminate all sources of randomness/non-determinism and also to avoid making single cards too powerful.
 
 The game is played by two players who attempt to reduce the life of the other player to zero or less by using their cards wisely.
-Each player enters the game with a deck of $deckSize cards in total.
+Each player chooses a faction to play and enters the game with a deck of $deckSize cards in total.
 The order of cards in this deck is chosen by the player but it cannot be changed once the game has started.
 These cards may be any of the cards that are part of the game.
 However, all of them are subject to certain limits in their number per deck.
@@ -21,29 +21,38 @@ Players may only play cards during their own turn.
 Types of cards available:
 
 1. Unit: spawns a unit under your command
-2. Ability: one-time use with an instant or temporary effect
+2. Ability: instant effect, one-time use
 3. Attachment: permanently attached to a unit, altering its behaviour
+4. State: global effect, lasts up to the current player's next turn
 
 The resource system is not based on playing resource-generating cards.
-Instead, a player has the choice of upgrading only up to one resource generation stat per turn, independently of their hand.
+Instead, a player has the choice of upgrading only up to one attribute per turn, independently of their hand.
+These attributes determine what cards a player may play.
+They are not resources themselves.
+Once the attribute requirements of a card have been met, any number of them can be played, depending on the resources remaining for this turn and the cost of playing the card.
+Each attribute has an initial value of 1.
+The actual resource spent is a unified resource called action points.
+The number of action points granted to a player depends on what turn it is.
+They are equal to $actionPoints(turn).
+This seemingly asymmetrical distribution is also an attempt at balancing out a first turn advantage.
 
+Attributes:
+
+1. Command: requirement for units
+2. Skill: requirement for attachments and abilities pertaining to units/the opponent
+3. Meta: requirement for states and abilities pertaining to deck control
+
+A player may only have units from their faction or the neutral faction in their deck.
 Damage dealt to a unit is permanent.
-Life does not automatically recover at the end of a turn.
+Its life does not automatically recover at the end of a turn.
+If attack is zero or less, this unit is unable to attack.
+If a unit's life is reduced to zero or less, it dies and is removed from the board.
 
 Primary properties of units:
 
-1. Attack (integer)
-2. Defence (integer)
-3. Life (integer)
-4. Flags (optional)
-
-If damage is zero or less, this unit is unable to attack.
-If a unit's life is reduced to zero or less, it dies and is removed from the game.
-
-Unit flags:
-
-Cover: unit cannot be targeted by single target abilities, nor does it take damage from area of effect abilities
-Infiltration: attacks by this pass enemy units in that sector and directly deal damage to the player
-Overrun: remaining damage is applied to the opponent themself should the defenders blocking this unit all perish in the attack
-Shock troops: this unit is not out of combat after deployment
-Suicide: this unit dies once it has performed an attack
+1. Faction
+2. Limit
+3. Attack (integer)
+4. Defence (integer)
+5. Life (integer)
+6. Flags (optional)
