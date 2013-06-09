@@ -23,7 +23,7 @@ Types of cards available:
 1. Unit: spawns a unit under your command
 2. Ability: instant effect, one-time use
 3. Attachment: permanently attached to a unit, altering its behaviour
-4. State: global effect, lasts up to the current player's next turn
+4. State: lasts up to the current player's next turn, affects either a lane or the entire board
 
 The resource system is not based on playing resource-generating cards.
 Instead, a player has the choice of upgrading only up to one attribute per turn, independently of their hand.
@@ -36,8 +36,7 @@ The number of action points granted to a player depends on what turn it is.
 They are equal to $actionPoints(turn).
 This seemingly asymmetrical distribution is also an attempt at balancing out a first turn advantage.
 If the player decides not to upgrade an attribute, they are eligible for spending action points to draw additional cards.
-Drawing the first card costs one action point.
-The cost increases by one action point for every further card drawn.
+Drawing a card costs $cardDrawingCost(draw).
 
 Attributes:
 
@@ -84,10 +83,11 @@ Optional unit flags:
 Armour(n): reduces the damage from attacks by units by n, does not reduce damage from abilities
 Charge: if there is another unit behind the victim of an attack in the lane, it will take damage, too, without causing defensive damage
 Flying: can target any enemy unit in its lane and the two adjacent lanes
+Heal(n): heals up to n missing life on the friendly unit in front of it
 Huge: prevents attacks by ranged and flying units on the friendly units in the lane positioned behind it
 Immune: immune to the effects of abilities used against it, cannot have attachments used on it
 Initiative: able to perform an attack right after deployment
-Life steal: this unit heals whenever it causes damage and the amount healed is equal to the damage dealt
+Life steal: this unit heals whenever it causes damage and the amount healed is equal to the damage dealt, the healing is applied before 
 Overrun: when an enemy unit is killed the remaining damage is applied to the unit behind it or, if there is no such unit, to the enemy player
 Poison(n): when causing damage, the target will become poisoned for n turns, taking one damage from the poison in each turn of the target's owner, poison damage does not stack, only the number of turns can be refreshed, they do not stack additively either
 Ranged: does not suffer the damage penalty from being blocked and can target any enemy unit in its lane
