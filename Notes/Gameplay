@@ -42,8 +42,8 @@ Drawing a card costs $cardDrawingCost(draw).
 Attributes:
 
 1. Command: requirement for units
-2. Skill: requirement for attachments and abilities pertaining to units/the opponent
-3. Meta: requirement for states and abilities pertaining to deck control
+2. Wisdom: requirement for attachments and abilities pertaining to units/the opponent
+3. Deceit: requirement for states and abilities pertaining to deck control
 
 The board is subdivided into two symmetrical sides, each one of which is assigned to one of the two players.
 Each side features $laneCount lanes with $laneDepth positions each.
