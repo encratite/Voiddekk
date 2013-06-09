@@ -1,0 +1,5 @@
+$deckSize = 50
+$initialHandSize = 5
+$initialPlayerLife = 30
+$drawDepth = 3
+$suddenDeathDamage = 5

@@ -1,78 +1,41 @@
-This is a turn based card game strongly influenced by Magic the Gathering.
+This is a turn-based strategy game played with cards, influenced by games like Magic the Gathering and Duel of Champions.
 My goal in this design was to eliminate all sources of randomness/non-determinism and also to avoid making single cards too powerful.
 
 The game is played by two players who attempt to reduce the life of the other player to zero or less by using their cards wisely.
-Each player enters the game with a deck of 40 cards in total.
+Each player enters the game with a deck of $deckSize cards in total.
 The order of cards in this deck is chosen by the player but it cannot be changed once the game has started.
 These cards may be any of the cards that are part of the game.
-However, most of them are subject to certain limits in their number per deck.
+However, all of them are subject to certain limits in their number per deck.
 A player's hand and their stacks are only visible to the owner.
 
-Each player starts out with 100 life and an initial hand of 6 cards, drawn from the top of the deck.
+Each player starts out with $initialPlayerLife life and an initial hand of $initialHandSize cards, drawn from the top of the deck.
 One player is given the first turn and may play their cards first.
 The player's current hand and the stack stacks are concealed from their opponent.
 Only cards from a player's current hand may be played.
-At the beginning of each new turn (that is, not the first one) the active player must draw a card from one of the top 3 cards of their stack.
-If the player's hand is empty and all stacks have been used up at this point, the player loses the game.
+At the beginning of each new turn (that is, not the first one) the active player must draw one of the top $drawDepth cards of their stack.
+If the player is unable to draw a card because he has run out, he takes $suddenDeathDamage damage.
 Stacks are likely structured such that the more expensive cards (i.e. they consume large amounts of resources) are closer to the bottom of each stack as they won't be of much use early in the game anyways.
-The point of the 3 card rule is enabling players to counter their opponent in a more controlled way instead of being forced to draw cards in a purely one-dimensional manner.
+The point of the drawing depth rule is enabling players to counter their opponent in a more controlled way instead of being forced to draw cards in a purely one-dimensional manner.
 Players may only play cards during their own turn.
 
-These are the types of cards available:
+Types of cards available:
 
-1. Resource: generates resources
-2. Unit: deploys a unit on the battlefield that can attack and inflict damage on the enemy player
-3. Unit upgrade: grants bonuses and abilities to units
-4. Ability: one-time use
-5. Scientific progress: persistent global bonus for a player
+1. Unit: spawns a unit under your command
+2. Ability: one-time use with an instant or temporary effect
+3. Attachment: permanently attached to a unit, altering its behaviour
 
-Each player has certain resources that can be gradually built up with resource cards.
-For each resource card deployed, that amount is granted to the player at the end of every turn.
-Resources add up and can be stored for later use in one of the following turns.
-Only one resource card may be played per turn.
-The following overview provides a list of the resource types and their common uses, although these aren't absolutes.
+The resource system is not based on playing resource-generating cards.
+Instead, a player has the choice of upgrading only up to one resource generation stat per turn, independently of their hand.
 
-1. Manpower
--used to produce infantry units
--component of upgrades for infantry units
-
-2. Industry
--used to produce armoured units and air units
--component of upgrades for armoured units and air units
-
-3. Technology
--special abilities
--component of advanced units
--component of upgrades
-
-4. Command
--special abilities
--component of advanced units
-
-Units are deployed in one of 5 sectors of the battlefield.
-These represent independent segments of the frontline.
-The units of a player deployed in a sector are arranged in an ordered sequence, a queue, in which only one unit is facing the enemy.
-Only the unit in the front can cause damage using regular attacks and can take damage from regular attacks.
-On deployment a unit is initially out of combat and cannot perform any attacks or use its special abilities (should it have any) in the current turn.
-Units can be deployed to any position in the queue.
-Should the first unit in the queue not be out of combat at the end of a turn of the owner, it automatically deals damage to the first enemy unit in that sector.
-If there is no enemy unit in that sector, the damage is dealt to the enemy player instead.
 Damage dealt to a unit is permanent.
 Life does not automatically recover at the end of a turn.
 
 Primary properties of units:
 
-1. Type
-2. Damage (integer)
+1. Attack (integer)
+2. Defence (integer)
 3. Life (integer)
-4. Unit flags (optional)
-5. Abilities (optional)
-6. Special rules (optional)
-
-Unit types:
-
-1. Infantry
-2. Armoured
+4. Flags (optional)
 
 If damage is zero or less, this unit is unable to attack.
 If a unit's life is reduced to zero or less, it dies and is removed from the game.
