@@ -4,7 +4,7 @@ My goal in this design was to eliminate all sources of randomness/non-determinis
 The game is played by two players who attempt to reduce the life of the other player to zero or less by using their cards wisely.
 Each player chooses a faction to play and enters the game with a deck of $deckSize cards in total.
 The order of cards in this deck is chosen by the player but it cannot be changed once the game has started.
-These cards may be any of the cards that are either associated with the player's faction or the neutral faction.
+These cards may be any of the cards that are not associated with other factions.
 However, all of them are subject to certain limits in their number per deck.
 A player's hand and their stacks are only visible to the owner.
 
@@ -62,7 +62,7 @@ When a unit's life is reduced to zero or less, it dies and is removed from the b
 The target of an attack of a unit may be the player if the enemy's corresponding lane is empty.
 Otherwise it must be an enemy unit that can be targeted by this unit.
 
-A regular unit can only attack the first enemy unit in its lane.
+A regular unit (i.e. a melee unit, but it's not a unit flag as it is the default type of unit) can only attack the first enemy unit in its lane.
 If there is another friendly unit in front of it, it is considered "blocked" and its attack is temporarily reduced by one.
 A ranged unit cannot be blocked and also does not take defensive damage when it attacks.
 It can also target any enemy unit in the lane.
@@ -74,7 +74,27 @@ Primary properties of units:
 2. Deck limit
 3. Attribute requirements
 4. Action points
-5. Attack (integer)
-6. Defence (integer)
-7. Life (integer)
-8. Flags (optional)
+5. Attack
+6. Defence
+7. Life 
+8. Flags
+
+Optional unit flags:
+
+Armour(n): reduces the damage from attacks by units by n, does not reduce damage from abilities
+Charge: if there is another unit behind the victim of an attack in the lane, it will take damage, too, without causing defensive damage
+Flying: can target any enemy unit in its lane and the two adjacent lanes
+Huge: prevents attacks by ranged and flying units on the friendly units in the lane positioned behind it
+Immune: immune to the effects of abilities used against it, cannot have attachments used on it
+Initiative: able to perform an attack right after deployment
+Life steal: this unit heals whenever it causes damage and the amount healed is equal to the damage dealt
+Overrun: when an enemy unit is killed the remaining damage is applied to the unit behind it or, if there is no such unit, to the enemy player
+Poison(n): when causing damage, the target will become poisoned for n turns, taking one damage from the poison in each turn of the target's owner, poison damage does not stack, only the number of turns can be refreshed, they do not stack additively either
+Ranged: does not suffer the damage penalty from being blocked and can target any enemy unit in its lane
+Reflect damage: reflects all damage dealt to it to the attacker, this is in addition to potential defensive damage
+Regeneration(n): tregenerates n life at the beginning of every turn of its owner
+Rush: can perform an attack after moving, but cannot attack and then move
+Shield(n): can block up to n damage until the shield is destroyed, it regenerates at the beginning of every turn of its owner, can also block damage from abilities
+Suicidal: dies after performing one attack
+Unstable: takes one damage at the beginning of every turn of the enemy player
+Vengeance: always deals defensive damage, even if it dies in the attack
