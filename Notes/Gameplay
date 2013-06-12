@@ -37,7 +37,7 @@ The number of action points granted to a player depends on what turn it is.
 They are equal to $actionPoints(turn).
 This seemingly asymmetrical distribution is also an attempt at balancing out a first turn advantage.
 If the player decides not to upgrade an attribute, they are eligible for spending action points to draw additional cards.
-Drawing a card costs $cardDrawingCost(draw).
+Drawing additional cards costs $cardDrawingCost(draw).
 
 Attributes:
 
@@ -55,8 +55,8 @@ Both players may move to the center position with a unit that had already been d
 A player may only have units from their faction or the neutral faction in their deck.
 In general a unit may either attack or perform a move in a turn, not both.
 A unit that was deployed in the current turn can usually not do anything in this turn.
-A unit may be moved to any free position in its current lane or one of the two adjacent lanes on the player's side of the board.
-Flying creatures can move as far as two lanes from the current lane.
+A unit may be moved to any free position in one of the lanes whose distance to the current lane is less or equal to two on the player's side of the board.
+Flying units has no such limitation in distance.
 When a unit attacks, the target takes damage equal to the attack value of the unit.
 Unless the attacking unit is ranged or the enemy unit dies in the attack, the attacker takes damage equal to the defence value of the target unit.
 Damage dealt to a unit is permanent.
@@ -74,7 +74,7 @@ A flying unit cannot be blocked and can target any enemy unit in its lane or one
 
 Primary properties of units:
 
-1. Faction
+1. Name
 2. Deck limit
 3. Attribute requirements
 4. Action points
@@ -93,7 +93,7 @@ Heal(n): heals up to n missing life on the friendly unit in front of it
 Huge: prevents attacks by ranged and flying units on the friendly units in the lane positioned behind it
 Immune: immune to the effects of abilities used against it, cannot have attachments used on it
 Initiative: able to perform an attack right after deployment
-Life steal: this unit heals whenever it causes damage and the amount healed is equal to the damage dealt, the healing is applied before 
+Life steal: this unit heals whenever it causes damage and the amount healed is equal to the damage dealt, up to the life the unit originally was deployed with
 Overrun: when an enemy unit is killed the remaining damage is applied to the unit behind it or, if there is no such unit, to the enemy player
 Poison(n): when causing damage, the target will become poisoned for n turns, taking one damage from the poison in each turn of the target's owner, poison damage does not stack, only the number of turns can be refreshed, they do not stack additively either
 Ranged: does not suffer the damage penalty from being blocked and can target any enemy unit in its lane

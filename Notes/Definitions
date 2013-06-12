@@ -6,6 +6,6 @@ $bleedingDamage = 1
 $drawDepth = 3
 $suddenDeathDamage = 5
 $actionPoints(turn) = floor(turn / 2) + 1
-$cardDrawingCost(draw) = sum(i = 1 to draw: i)
+$cardDrawingCost(draw) = sum(i = 2 to draw: i - 1)
 $laneCount = 5
 $laneDepth = 2
