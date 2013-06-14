@@ -30,8 +30,9 @@ function runTest()
 	{
 		write('Disconnected');
 	};
-	window.onunload = function()
+	window.onbeforeunload = function()
 	{
+		socket.onclose = function() {};
 		socket.close();
 	};
 }

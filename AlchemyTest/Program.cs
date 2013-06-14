@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Threading;
 
@@ -9,8 +10,12 @@ namespace AlchemyTest
 {
 	class Program
 	{
+		static List<UserContext> ActiveContexts;
+
 		static void Main(string[] arguments)
 		{
+			ActiveContexts = new List<UserContext>();
+
 			WebSocketServer server = new WebSocketServer(81, IPAddress.Any)
 			{
 				OnReceive = OnReceive,
@@ -45,20 +50,34 @@ namespace AlchemyTest
 
 		static void OnConnect(UserContext context)
 		{
-			Write("Connected", context);
-			new Thread(() => HandleClient(context)).Start();
+			lock (ActiveContexts)
+			{
+				Write("Connected", context);
+				ActiveContexts.Add(context);
+				new Thread(() => HandleClient(context)).Start();
+			}
 		}
 
 		static void OnDisconnect(UserContext context)
 		{
-			Write("Disconnected", context);
+			lock (ActiveContexts)
+			{
+				Write("Disconnected", context);
+				ActiveContexts.Remove(context);
+			}
 		}
 
 		static void HandleClient(UserContext context)
 		{
 			while (true)
 			{
-				context.Send(GetTimestamp());
+				lock (ActiveContexts)
+				{
+					if (!ActiveContexts.Contains(context))
+						break;
+					Write("Sending timestamp", context);
+					context.Send(GetTimestamp());
+				}
 				Thread.Sleep(1000);
 			}
 		}
