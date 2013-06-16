@@ -26,7 +26,7 @@ Types of cards available:
 1. Unit: spawns a unit under your command
 2. Ability: instant effect, one-time use
 3. Attachment: permanently attached to a unit, altering its behaviour
-4. State: lasts up to the current player's next turn, affects either a lane or the entire board
+4. State: lasts up to the current player's next turn or until triggered, affects either a lane or the entire board
 
 The resource system is not based on playing resource-generating cards.
 There is only one unified resource called action points.
