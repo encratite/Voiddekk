@@ -1,11 +1,11 @@
-$deckSize = 50
+$deckSize = 40
 $initialHandSize = 5
 $initialPlayerLife = 25
 $playerBleedingLifeThreshold = 10
 $bleedingDamage = 1
-$drawDepth = 3
-$suddenDeathDamage = 5
+$drawingDepth = 2
+$exhaustionDamage = 3
 $actionPoints(turn) = floor(turn / 2) + 1
-$cardDrawingCost(draw) = sum(i = 2 to draw: i - 1)
+$additionalCardDrawingCost(draw) = 1 + 2 * (draw - 1)
 $laneCount = 5
 $laneDepth = 2
