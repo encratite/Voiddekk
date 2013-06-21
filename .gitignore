@@ -2,5 +2,7 @@ bin
 obj
 *.suo
 *.user
+*.js
+*.js.map
 References
 AssemblyInfo.cs
