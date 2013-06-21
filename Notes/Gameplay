@@ -1,46 +1,57 @@
 This is a turn-based strategy game played with cards, influenced by games like Magic the Gathering and Duel of Champions.
 My goal in this design was to eliminate all sources of randomness/non-determinism and also to avoid making single cards too powerful.
+However, I largely re-introduced at least deck randomness because it would likely make the game too static and make certain setups far too strong.
 
 The game is played by two players who attempt to reduce the life of the other player to zero or less by using their cards wisely.
-Each player chooses a pre-defined character to play and enters the game with a deck of $deckSize cards in total.
-The order of cards in this deck is chosen by the player but it cannot be changed once the game has started.
-These cards may be any of those associated with that character.
-Each one of these characters is typically associated with a faction (i.e. a group of cards based on the same theme) and enables the use of a certain subset of the cards of that faction.
-They represent different flavours of the same faction.
+Each player chooses a pre-defined faction to play and enters the game with a deck of $deckSize cards in total.
+The order of the cards in the deck is randomised at the start of the game, except for the top $fixedHandSize cards, which were chosen in advance by the player.
+This causes the initial hand to be partially fixed and configurable by the player.
+This way mulligans are no longer necessary as every initial hand is essentially useful.
+The cards of a deck may be any of those associated with that faction.
+Each one of these factions is associated with a race (i.e. a set of cards based on the same theme) and enables the use of a certain subset of the cards of that race.
+They represent different flavours of the same race.
 However, all of them are subject to certain limits in their number per deck.
-A player's hand and their stacks are only visible to the owner.
+A player's hand and their deck are only visible to the owner.
 
 Each player starts out with $initialPlayerLife life and an initial hand of $initialHandSize cards, drawn from the top of the deck.
 Once a player's life drops to $playerBleedingLifeThreshold or less, the player starts bleeding and loses $bleedingDamage health whenever it's that player's turn.
 One player is given the first turn and may play their cards first.
-The player's current hand and the stack stacks are concealed from their opponent.
 Only cards from a player's current hand may be played.
-At the beginning of each new turn (that is, not the first one) the active player must draw one of the top $drawingDepth cards of their stack.
-If the player is unable to draw a card because they have run out, they take $exhaustionDamage damage from exhaustion.
-Stacks are likely structured such that the more expensive cards (i.e. they consume large amounts of resources) are closer to the bottom of each stack as they won't be of much use early in the game anyways.
-The point of the drawing depth rule is enabling players to counter their opponent in a more controlled way instead of being forced to draw cards in a purely one-dimensional manner.
+At the beginning of each new turn (that is, not the first one) the active player must draw the top-most card from their deck.
+If the player is unable to draw a card because they have run out of cards, they take $exhaustionDamage damage from exhaustion.
 Players may only play cards during their own turn.
 
 Types of cards available:
 
 1. Unit: spawns a unit under your command
-2. Ability: instant effect, one-time use
-3. Attachment: permanently attached to a unit, altering its behaviour
-4. State: lasts up to the current player's next turn or until triggered, affects either a lane or the entire board
+
+2. Attachment: permanently attached to a friendly or enemy unit, altering its behaviour
+
+3. Ability: instant effect, must have one of the following targets:
+Enemy unit
+Friendly unit
+Lane
+Global
+
+4. State: temporary effect, must have one of the following targets:
+Lane
+Global
+Must have one of the following durations:
+Until the next turn of the owner
+Until triggered
 
 The resource system is not based on playing resource-generating cards.
-There is only one unified resource called action points.
-The number of action points granted to a player depends on what turn it is.
-They are equal to $actionPoints(turn).
+There is only one unified resource called energy.
+The number of energy points granted to a player depends on what turn it is and it is equal to $energy(turn).
 This seemingly asymmetrical distribution is also an attempt at balancing out a first turn advantage.
 They do not carry over from one turn to the next one so it is in a player's best interest to spend all of them each turn.
-Players are also permitted to spend action points to draw additional cards fromn the top of their deck at the cost of $cardDrawingCost(draw).
+Players are also permitted to spend energy to draw additional cards fromn the top of their deck at the cost of $cardDrawingCost(draw).
 
 The board is subdivided into two symmetrical sides, each one of which is assigned to one of the two players.
 Each side features $laneCount lanes with $laneDepth positions each.
 Each one of these positions may be occupied by up to one unit of that player.
 There is also an additional center position for each lane, which can be occupied by only one player at a time, by up to one unit.
-This center position costs an additional action point to deploy to and also costs an action point to move to.
+This center position costs an additional energy point to deploy to and also costs an energy point to move to.
 Both players may move to the center position with a unit that had already been deployed.
 
 A player may only have units from their faction or the neutral faction in their deck.
@@ -70,7 +81,7 @@ Primary properties of units:
 3. Cost in action points
 4. Attack
 5. Defence
-6. Life 
+6. Life
 7. Flags
 
 Optional unit flags:
