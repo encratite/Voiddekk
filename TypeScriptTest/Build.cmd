@@ -1,1 +1,0 @@
-"C:\Program Files (x86)\Microsoft SDKs\TypeScript\tsc.exe" --comments --out Content\socketTest.js Source\Main.ts Source\Library.ts

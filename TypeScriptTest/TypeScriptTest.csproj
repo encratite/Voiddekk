@@ -22,6 +22,9 @@
   <PropertyGroup>
     <RootNamespace>TypeScriptTest</RootNamespace>
   </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <ProjectExtensions>
@@ -55,10 +58,20 @@
     <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="Library.ts">
-      <SubType>Code</SubType>
+    <Content Include="Source\Library.ts" />
+    <Content Include="Source\Main.ts" />
+    <TypeScriptCompile Include="Dummy.ts" />
+    <Content Include="file1.js">
+      <DependentUpon>Dummy.ts</DependentUpon>
     </Content>
-    <Content Include="Main.ts" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>cd ..\Source
+"C:\Program Files (x86)\Microsoft SDKs\TypeScript\tsc.exe" --comments --out ..\Content\socketTest.js Main.ts Library.ts</PreBuildEvent>
+  </PropertyGroup>
 </Project>
