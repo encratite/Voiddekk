@@ -4,5 +4,6 @@ obj
 *.user
 *.js
 *.js.map
+*.pdf
 References
 AssemblyInfo.cs

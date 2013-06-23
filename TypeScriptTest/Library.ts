@@ -1,9 +1,9 @@
-function write(line : string) {
+function write(line: string) {
     var output = document.getElementById('output');
     output.innerHTML += line + "\n";
 }
 
-function runTest() {
+export function runTest() {
     var url = 'ws://127.0.0.1:81/';
     write('Connecting');
     var socket = new WebSocket(url);
@@ -17,5 +17,3 @@ function runTest() {
         write('Disconnected');
     };
 }
-
-runTest();

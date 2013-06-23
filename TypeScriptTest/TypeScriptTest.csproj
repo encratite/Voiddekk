@@ -30,7 +30,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>58015</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:49234/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
@@ -55,10 +55,14 @@
     <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="socketTest.js">
-      <DependentUpon>socketTest.ts</DependentUpon>
+    <TypeScriptCompile Include="Library.ts" />
+    <Content Include="file1.js">
+      <DependentUpon>Library.ts</DependentUpon>
     </Content>
-    <TypeScriptCompile Include="socketTest.ts" />
+    <Content Include="socketTest.js">
+      <DependentUpon>Main.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="Main.ts" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets" />
 </Project>
