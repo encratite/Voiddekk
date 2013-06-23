@@ -55,10 +55,14 @@
     <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="socketTest.html" />
     <Content Include="socketTest.js">
       <DependentUpon>socketTest.ts</DependentUpon>
     </Content>
+    <TypeScriptCompile Include="test1.ts" />
+    <TypeScriptCompile Include="test2.ts" />
+    <TypeScriptCompile Include="test3.ts" />
+    <TypeScriptCompile Include="test4.ts" />
+    <TypeScriptCompile Include="test5.ts" />
     <TypeScriptCompile Include="socketTest.ts" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets" />
