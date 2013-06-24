@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlchemyTest", "AlchemyTest\AlchemyTest.csproj", "{0BAFA04B-24F5-4B9D-BB4D-1DBF63985C72}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlchemyTest", "Tests\AlchemyTest\AlchemyTest.csproj", "{0BAFA04B-24F5-4B9D-BB4D-1DBF63985C72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperWebSocketTest", "SuperWebSocketTest\SuperWebSocketTest.csproj", "{71582B19-D7B3-4749-B1C2-74F72E10BA99}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperWebSocketTest", "Tests\SuperWebSocketTest\SuperWebSocketTest.csproj", "{71582B19-D7B3-4749-B1C2-74F72E10BA99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeScriptTest", "TypeScriptTest\TypeScriptTest.csproj", "{0BA78AC9-11CB-4F20-B8C2-E7D3F42AAE07}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeScriptTest", "Tests\TypeScriptTest\TypeScriptTest.csproj", "{0BA78AC9-11CB-4F20-B8C2-E7D3F42AAE07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSONTest", "JSONTest\JSONTest.csproj", "{F16ACE84-F4BB-497F-8F1B-41F27840917F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSONTest", "Tests\JSONTest\JSONTest.csproj", "{F16ACE84-F4BB-497F-8F1B-41F27840917F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
