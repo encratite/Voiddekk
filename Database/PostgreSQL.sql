@@ -27,7 +27,7 @@ create table player_card(
 );
 
 -- Index for looking up the cards owned by a player
-create index player_card_index_player_id on player_card(name);
+create index player_card_index_player_id on player_card(player_id);
 
 drop table if exists player_deck cascade;
 
