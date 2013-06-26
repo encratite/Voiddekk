@@ -7,7 +7,9 @@ create table player(
 	id serial primary key,
 	name text not null,
 	-- SHA-3 (512-bit) hash of salt and password
-	password_hash bytea not null
+	password_hash bytea not null,
+	-- Currency owned by the player, name intentionally generic
+	currency integer not null
 );
 
 -- Index for looking up players based on their names when logging in

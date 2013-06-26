@@ -1,0 +1,12 @@
+Implement a combined RPC and event protocol
+
+RPC API that still needs to be implemented:
+
+RegistrationResult Register(string username, string password)
+bool Authenticate(string username, string password)
+PlayerInformation GetPlayerInformation(playerId): for playerId == null it returns information about the owner of the session 
+List<Deck> GetDecks()
+int CreateDeck(string name)
+void RenameDeck(int deckId, string name)
+void ModifyDeck(int deckId, List<DeckCard> cards)
+void RemoveDeck(int deckId)
