@@ -9,7 +9,11 @@ create table player(
 	-- SHA-3 (512-bit) hash of salt and password
 	password_hash bytea not null,
 	-- Currency owned by the player, name intentionally generic
-	currency integer not null
+	currency integer not null,
+	-- Time this account was registered
+	time_registered timestamp not null,
+	-- Time of last login, useful for removing old accounts
+	last_login timestamp not null
 );
 
 -- Index for looking up players based on their names when logging in
