@@ -7,11 +7,9 @@ create table player(
 	id serial primary key,
 	name text not null,
 	-- SHA-3 (512-bit) hash of salt and password
-	password_hash bytea not null,
+	password bytea not null,
 	-- Currency owned by the player, name intentionally generic
 	currency integer not null,
-	-- Optional, specifies the ID of the deck that was used last
-	active_deck_id integer references player_deck(id),
 	-- Time this account was registered
 	time_registered timestamp not null,
 	-- Time of last login, useful for removing old accounts
