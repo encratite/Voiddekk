@@ -5,30 +5,50 @@ Implement a combined RPC and event protocol
 
 RPC API:
 
-RegistrationResult Register(string username, string password)
-bool Authenticate(string username, string password)
+// Out of game API
 
-// If name == null, it returns information about the account logged into
-PlayerInfo GetPlayerInfo(string name)
+	RegistrationResult Register(string username, string password)
+	bool Authenticate(string username, string password)
 
-// Deck handling
+	// If name == null, it returns information about the account logged into
+	PlayerInfo GetPlayerInfo(string name)
 
-List<Deck> GetDecks()
-void AddDeck(string name, Deck deck)
-void RemoveDeck(string deckName)
+	// Deck handling
 
-// Custom PvP games
+	List<Deck> GetDecks()
+	int AddDeck(string name, Deck deck)
+	void RemoveDeck(int deckId)
 
-List<string> GetGames()
-// Returns the name of the game created, the title is generated automatically and in the case of private games it returns a secret game key required to join the game
-string CreateGame(string deckName, bool isPrivate)
-// Causes a game to start
-void JoinGame()
+	// Custom PvP games
 
-// Single-player campaign
+	List<string> GetGames()
+	// Returns the name of the game created, the title is generated automatically and in the case of private games it returns a secret game key required to join the game
+	string CreateGame(int deckId, bool isPrivate)
+	// Causes a game to start
+	void JoinGame()
 
-void PlayCampaign(string scenario)
+	// Single-player and custom AI games will be added later
+
+// In game API
+
+	void EndTurn()
+	void DrawCard()
+	void DeployUnit(int cardId, Position position)
+	void UseUnitAbility(int cardId, int targetId)
+	void UseLaneAbility(int cardId, int lane)
+	void UseGlobalAbility(int cardId)
+	void AttackUnit(int attackerId, int defenderId)
+	void AttackPlayer(int attackerId)
 
 Events:
 
-GameStarted(GameInfo game)
+// Out of game events
+
+	GameStarted(GameInfo game)
+
+// In game events
+
+	// NewTurnInfo must provide the player ID, new card counts (in hand/in deck), energy, exhaustion damage, poison damage
+	NewTurn(NewTurnInfo newTurn)
+	// Card information is only revealed to the client of the player who drew the card
+	NewCard(int cardId)
