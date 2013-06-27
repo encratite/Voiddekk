@@ -10,6 +10,8 @@ create table player(
 	password_hash bytea not null,
 	-- Currency owned by the player, name intentionally generic
 	currency integer not null,
+	-- Optional, specifies the ID of the deck that was used last
+	active_deck_id integer references player_deck(id),
 	-- Time this account was registered
 	time_registered timestamp not null,
 	-- Time of last login, useful for removing old accounts
@@ -27,7 +29,7 @@ create table player_card(
 	-- They require an ID of their own for the purpose of trading and association with decks
 	id serial primary key,
 	-- The numeric ID of the card from the card configuration file
-	card_id integer not null,
+	card_identifier integer not null,
 	-- The ID of the owner
 	player_id integer references player(id) not null
 );
@@ -41,6 +43,8 @@ drop table if exists player_deck cascade;
 create table player_deck(
 	id serial primary key,
 	name text not null,
+	-- References the ID from the faction configuration file
+	faction_identifier integer not null,
 	-- The ID of the owner of the deck
 	player_id integer references player(id) not null
 );
