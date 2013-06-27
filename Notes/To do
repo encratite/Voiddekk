@@ -1,5 +1,6 @@
-Implement a combined RPC and event protocol
+Card XML format
 
+Implement a combined RPC and event protocol
 RPC API that still needs to be implemented:
 
 RegistrationResult Register(string username, string password)
