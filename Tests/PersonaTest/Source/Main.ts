@@ -15,7 +15,7 @@ function onLoginClick() {
 	id.request();
 }
 
-function onResourcesLoaded() {
+function onResourcesLoaded(resourceLoader: ResourceLoader) {
 	var button = document.createElement('input')
 	button.type = 'button';
 	button.onclick = onLoginClick;
@@ -24,8 +24,9 @@ function onResourcesLoaded() {
 }
 
 function main() {
-	var resourceLoader = new ResourceLoader(['https://login.persona.org/include.js'], [], onResourcesLoaded);
-	resourceLoader.run();
+	var resourceLoader = new ResourceLoader();
+	resourceLoader.addScript('https://login.persona.org/include.js');
+	resourceLoader.run(onResourcesLoaded);
 }
 
 main();
