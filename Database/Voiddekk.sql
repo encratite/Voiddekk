@@ -1,3 +1,5 @@
+-- This is a PostgreSQL script
+
 set client_min_messages to warning;
 
 drop table if exists player cascade;
