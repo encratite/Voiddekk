@@ -34,11 +34,12 @@ RPC API:
 	void EndTurn()
 	void DrawCard()
 	void DeployUnit(int cardId, Position position)
-	void UseUnitAbility(int cardId, int targetId)
+	void UseUnitAbility(int cardId, int unitId)
 	void UseLaneAbility(int cardId, int lane)
 	void UseGlobalAbility(int cardId)
 	void AttackUnit(int attackerId, int defenderId)
 	void AttackPlayer(int attackerId)
+	void MoveUnit(int unitId, Position position)
 
 Events:
 
@@ -48,7 +49,21 @@ Events:
 
 // In game events
 
-	// NewTurnInfo must provide the player ID, new card counts (in hand/in deck), energy, exhaustion damage, poison damage
-	NewTurn(NewTurnInfo newTurn)
-	// Card information is only revealed to the client of the player who drew the card
-	NewCard(int cardId)
+	NewTurn(int playerId)
+	// Specify the type of a card, this is consistently called prior to the introduction of a new card ID
+	NewCard(int cardId, int type)
+	// Card information is only revealed to the client of the player who drew the card, this message is not broadcast
+	CardDrawn(int cardId)
+	UpdateCardCount(int playerId, int handCards, int deckCards)
+	UpdateEnergy(int playerId, int energy)
+	UpdatePlayerHealth(int playerId, int newHealth)
+	// This is used to indicate both damage and states such as immobilisation, poison, shield, weakening
+	UpdateUnitState(int cardId, int health, List<UnitFlag> flags)
+	UnitAbilityUsed(int cardId, int unitId)
+	LaneAbilityUsed(int cardId, int lane)
+	GlobalAbilityUsed(int cardId)
+	UnitAttacked(int attackerId, int defenderId)
+	PlayerAttacked(int attackerId, int playerId)
+	UnitMoved(int unitId, Position position)
+	UnitDestroyed(int unitId)
+	GameOver(int winnerId)

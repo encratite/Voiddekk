@@ -27,7 +27,7 @@ create table player_card(
 	-- They require an ID of their own for the purpose of trading and association with decks
 	id serial primary key,
 	-- The numeric ID of the card from the card configuration file
-	card_identifier integer not null,
+	type integer not null,
 	-- The ID of the owner
 	player_id integer references player(id) not null
 );
@@ -42,7 +42,7 @@ create table player_deck(
 	id serial primary key,
 	name text not null,
 	-- References the ID from the faction configuration file
-	faction_identifier integer not null,
+	faction integer not null,
 	-- The ID of the owner of the deck
 	player_id integer references player(id) not null
 );
