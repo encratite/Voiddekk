@@ -62,12 +62,13 @@
       <DependentUpon>Dummy.ts</DependentUpon>
     </Content>
     <Content Include="Source\Main.ts" />
+    <Content Include="Source\Persona.ts" />
     <Content Include="Source\ResourceLoader.ts" />
     <Content Include="Source\Utility.ts" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets" />
   <PropertyGroup>
     <PreBuildEvent>cd ..\Source
-"C:\Program Files (x86)\Microsoft SDKs\TypeScript\tsc.exe" --comments --out ..\Content\PersonaTest.js Main.ts ResourceLoader.ts Utility.ts</PreBuildEvent>
+"C:\Program Files (x86)\Microsoft SDKs\TypeScript\tsc.exe" --comments --out ..\Content\PersonaTest.js Main.ts Persona.ts ResourceLoader.ts Utility.ts</PreBuildEvent>
   </PropertyGroup>
 </Project>
