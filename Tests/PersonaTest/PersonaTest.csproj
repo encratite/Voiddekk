@@ -30,7 +30,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>56721</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:56189/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
@@ -54,5 +54,18 @@
     <TypeScriptSourceMap>false</TypeScriptSourceMap>
     <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
   </PropertyGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Dummy.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dummy.js">
+      <DependentUpon>Dummy.ts</DependentUpon>
+    </Content>
+    <Content Include="Source\Main.ts" />
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>cd ..\Source
+"C:\Program Files (x86)\Microsoft SDKs\TypeScript\tsc.exe" --comments --out ..\Content\personaTest.js Main.ts</PreBuildEvent>
+  </PropertyGroup>
 </Project>
