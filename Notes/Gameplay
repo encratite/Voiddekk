@@ -59,8 +59,8 @@ In general a unit may either attack or perform a move in a turn, not both.
 A unit that was deployed in the current turn can usually not do anything in this turn.
 A unit may be moved to any free position in any lane on the player's side of the board.
 When a unit attacks, the target takes damage equal to the attack value of the unit.
-The attacker takes damage equal to the defence value of the target unit.
-Exceptions to this rule are units with the ranged, initiative and ignore defence flags.
+Unless the target dies in the attack, the attacker takes damage equal to the defence value of the target unit.
+Exceptions to this rule are units with the ranged and ignore defence flags.
 Damage dealt to a unit is permanent.
 Its life does not automatically recover at the end of a turn.
 If attack is zero or less, this unit is unable to attack.
@@ -94,7 +94,6 @@ Haste: able to perform an attack right after deployment
 Heal(n): heals up to n missing life on the friendly unit in front of it
 Huge: prevents attacks by ranged and flying units on the friendly units in the lane positioned behind it
 Immune: immune to the effects of abilities used against it, cannot have attachments used on it
-Initiative: does not take defensive damage if the enemy unit dies in the attack
 Life steal(n): this unit heals whenever it causes damage and the amount healed is equal to the damage dealt but cannot exceed n, healing does not mean it can gain more than its maximum life
 Overrun: when an enemy unit is killed the remaining damage is applied to the unit behind it or, if there is no such unit, to the enemy player
 Poison(n): when causing damage, the target will become poisoned for n turns, taking one damage from the poison at the beginning of each turn of the target's owner, poison damage does not stack, only the number of turns can be refreshed, the duration does not stack additively either
