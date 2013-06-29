@@ -54,7 +54,7 @@ namespace PersonaServer
 
 		static void OnPersonaResponse(WebSocketSession session, PersonaResponse response)
 		{
-			string message = string.Format("Persona response: email {0}, audience {1}, expires {2}, issuer {3}", session, response.email, response.audience, response.expires, response.issuer);
+			string message = string.Format("Persona response: email {0}, audience {1}, expires {2}, issuer {3}", response.email, response.audience, response.expires, response.issuer);
 			Write(message, session);
 			session.Send(message);
 		}

@@ -73,7 +73,7 @@ namespace PersonaServer
 				string content = stream.ReadToEnd();
 				JavaScriptSerializer serialiser = new JavaScriptSerializer();
 				PersonaResponse personaResponse = serialiser.Deserialize<PersonaResponse>(content);
-				if (personaResponse.status != "ok")
+				if (personaResponse.status != "okay")
 					throw new PersonaException("Persona login failed");
 				OnResponse(personaResponse);
 			}
