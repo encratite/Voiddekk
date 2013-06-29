@@ -49,7 +49,7 @@ namespace PersonaServer
 				string postString = string.Format("assertion={0}&audience={1}", HttpUtility.UrlEncode(Assertion), HttpUtility.UrlEncode(Audience));
 				PostBytes = Encoding.ASCII.GetBytes(postString);
 				Request = (HttpWebRequest)HttpWebRequest.Create("https://verifier.login.persona.org/verify");
-				Request.UserAgent = "Persona Test Client";
+				Request.UserAgent = "Persona Client";
 				Request.Method = "POST";
 				Request.ContentType = "application/x-www-form-urlencoded";
 				Request.ContentLength = PostBytes.Length;
