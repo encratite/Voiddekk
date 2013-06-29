@@ -20,7 +20,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>PersonaTest</RootNamespace>
+    <RootNamespace>PersonaClient</RootNamespace>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
@@ -69,6 +69,6 @@
   <Import Project="$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets" />
   <PropertyGroup>
     <PreBuildEvent>cd ..\Source
-"C:\Program Files (x86)\Microsoft SDKs\TypeScript\tsc.exe" --comments --out ..\Content\PersonaTest.js Main.ts Persona.ts ResourceLoader.ts Utility.ts</PreBuildEvent>
+"C:\Program Files (x86)\Microsoft SDKs\TypeScript\tsc.exe" --comments --out ..\Content\PersonaClient.js Main.ts Persona.ts ResourceLoader.ts Utility.ts</PreBuildEvent>
   </PropertyGroup>
 </Project>

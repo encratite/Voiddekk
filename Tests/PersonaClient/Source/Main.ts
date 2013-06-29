@@ -23,6 +23,8 @@ class PersonaTest {
 		var paragraph2 = document.createElement('p');
 
 		var textArea = document.createElement('textarea');
+		textArea.style.width = '50em';
+		textArea.style.height = '20em';
 		this.textArea = textArea;
 
 		var button = document.createElement('input')
