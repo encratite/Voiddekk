@@ -4,7 +4,7 @@ class ResourceLoader {
 	private scriptsRemaining: string[];
 	private imagesRemaining: string[];
 	private images: HTMLImageElement[];
-	private onCompletion: (loader: ResourceLoader) => void;
+	private onCompletion: () => void;
 
 	constructor() {
 		this.scriptsRemaining = [];
@@ -28,7 +28,7 @@ class ResourceLoader {
 		throw 'Unable to find image resource for source "' + source + '"';
 	}
 
-	run(onCompletion: (loader: ResourceLoader) => void) {
+	run(onCompletion: () => void) {
 		this.onCompletion = onCompletion;
 		this.scriptsRemaining.forEach((script: string) => this.loadScript(script));
 	}
@@ -61,6 +61,6 @@ class ResourceLoader {
 
 	private completionCheck() {
 		if (this.scriptsRemaining.length == 0 && this.imagesRemaining.length == 0)
-			this.onCompletion(this);
+			this.onCompletion();
 	}
 }

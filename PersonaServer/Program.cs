@@ -1,10 +1,14 @@
 ﻿using System;
+using System.IO;
+using System.Net;
+using System.Text;
 using System.Threading;
+using System.Web;
 
 using SuperWebSocket;
 using SuperSocket.SocketBase;
 
-namespace SuperWebSocketTest
+namespace PersonaServer
 {
 	class Program
 	{
@@ -14,7 +18,7 @@ namespace SuperWebSocketTest
 			server.NewSessionConnected += new SessionHandler<WebSocketSession>(OnConnect);
 			server.SessionClosed += new SessionHandler<WebSocketSession, CloseReason>(OnDisconnect);
 			server.NewMessageReceived += new SessionHandler<WebSocketSession, string>(OnMessage);
-			server.Setup(81);
+			server.Setup(82);
 			server.Start();
 			ManualResetEvent resetEvent = new ManualResetEvent(false);
 			resetEvent.WaitOne();
@@ -33,7 +37,6 @@ namespace SuperWebSocketTest
 		static void OnConnect(WebSocketSession session)
 		{
 			Write("Connected", session);
-			new Thread(() => HandleClient(session)).Start();
 		}
 
 		static void OnDisconnect(WebSocketSession session, CloseReason reason)
@@ -44,16 +47,23 @@ namespace SuperWebSocketTest
 		static void OnMessage(WebSocketSession session, string message)
 		{
 			Write("Message: {0}", session, message);
+			string audience = "http://persona/";
+			PersonaClient client = new PersonaClient(message, audience, (PersonaResponse response) => OnPersonaResponse(session, response), (Exception exception) => OnPersonaException(session, exception));
+			client.Run();
 		}
 
-		static void HandleClient(WebSocketSession session)
+		static void OnPersonaResponse(WebSocketSession session, PersonaResponse response)
 		{
-			while (session.Connected)
-			{
-				Write("Sending timestamp", session);
-				session.Send(GetTimestamp());
-				Thread.Sleep(1000);
-			}
+			string message = string.Format("Persona response: email {0}, audience {1}, expires {2}, issuer {3}", session, response.email, response.audience, response.expires, response.issuer);
+			Write(message, session);
+			session.Send(message);
+		}
+
+		static void OnPersonaException(WebSocketSession session, Exception exception)
+		{
+			string message = string.Format("Persona exception: {0}", exception.Message);
+			Write(message, session);
+			session.Send(message);
 		}
 	}
 }
