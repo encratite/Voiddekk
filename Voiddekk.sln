@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SHA3Test", "Tests\SHA3Test\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonaTest", "Tests\PersonaTest\PersonaTest.csproj", "{7374ACC5-C9AB-4A02-BE8D-5F2CD31C14A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonaServer", "PersonaServer\PersonaServer.csproj", "{BFF06C5D-7A23-4B83-AF98-ADAD27E03E30}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonaServer", "Tests\PersonaServer\PersonaServer.csproj", "{BFF06C5D-7A23-4B83-AF98-ADAD27E03E30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
