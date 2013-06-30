@@ -1,10 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using System.Runtime.Serialization.Json;
 using System.Text;
-using System.Threading;
 using System.Web;
-using System.Web.Script.Serialization;
 
 namespace PersonaServer
 {
@@ -69,11 +68,9 @@ namespace PersonaServer
 				postStream.Write(PostBytes, 0, PostBytes.Length);
 				postStream.Close();
 				HttpWebResponse webResponse = (HttpWebResponse)Request.GetResponse();
-				StreamReader stream = new StreamReader(webResponse.GetResponseStream(), Encoding.ASCII);
-				string content = stream.ReadToEnd();
-				JavaScriptSerializer serialiser = new JavaScriptSerializer();
-				PersonaResponse personaResponse = serialiser.Deserialize<PersonaResponse>(content);
-				if (personaResponse.status != "okay")
+				DataContractJsonSerializer serialiser = new DataContractJsonSerializer(typeof(PersonaResponse));
+				PersonaResponse personaResponse = (PersonaResponse)serialiser.ReadObject(webResponse.GetResponseStream());
+				if (personaResponse.Status != "okay")
 					throw new PersonaException("Persona login failed");
 				OnResponse(personaResponse);
 			}

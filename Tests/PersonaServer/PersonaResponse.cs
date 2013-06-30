@@ -1,11 +1,23 @@
-﻿namespace PersonaServer
+﻿using System.Runtime.Serialization;
+
+namespace PersonaServer
 {
+	[DataContract]
 	class PersonaResponse
 	{
-		public string status { get; set; }
-		public string email { get; set; }
-		public string audience { get; set; }
-		public long expires { get; set; }
-		public string issuer { get; set; }
+		[DataMember(Name = "status")]
+		public string Status { get; set; }
+
+		[DataMember(Name = "email")]
+		public string Email { get; set; }
+
+		[DataMember(Name = "audience")]
+		public string Audience { get; set; }
+
+		[DataMember(Name = "expires")]
+		public long Expires { get; set; }
+
+		[DataMember(Name = "issuer")]
+		public string Issuer { get; set; }
 	}
 }
