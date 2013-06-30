@@ -7,9 +7,7 @@ drop table if exists player cascade;
 -- Players registered with the system
 create table player(
 	id serial primary key,
-	name text not null,
-	-- SHA-3 (512-bit) hash of salt and password
-	password bytea not null,
+	name text unique not null,
 	-- Currency owned by the player, name intentionally generic
 	currency integer not null,
 	-- Time this account was registered
@@ -18,8 +16,32 @@ create table player(
 	last_login timestamp not null
 );
 
--- Index for looking up players based on their names when logging in
+-- Index for looking up players by name in future search features
 create index player_name_index on player(name);
+
+drop table if exists persona cascade;
+
+-- Mozilla Personas that have been used in the system
+-- Also used to associate sessions with personas and players
+create table persona(
+	id serial primary key,
+	-- Persona fields
+	email text unique not null,
+	issuer text not null,
+	-- This field needs to get updated for every Persona-based authentication
+	expires timestamp not null,
+	-- The session key generated during authentication may be used in future to log in without the persona
+	session_key text unique not null,
+	-- Once a player has been associated with the Persona this ID is specified, until then this field is null
+	player_id integer references player(id)
+);
+
+-- Index for looking up personas by email during Persona-based authentication
+create index persona_email_index on persona(email);
+-- Index for checking if a session key is valid
+create index persona_session_key on persona(session_key);
+-- Index for looking up a player associated with a persona
+create index persona_player_id on persona(player_id);
 
 drop table if exists player_card cascade;
 
@@ -46,7 +68,9 @@ create table player_deck(
 	-- References the ID from the faction configuration file
 	faction integer not null,
 	-- The ID of the owner of the deck
-	player_id integer references player(id) not null
+	player_id integer references player(id) not null,
+	-- Deck names should be unique per player
+	unique(name, player_id)
 );
 
 -- Index for looking up the decks owned by a player
