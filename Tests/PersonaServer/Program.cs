@@ -8,7 +8,9 @@ using System.Web;
 using SuperWebSocket;
 using SuperSocket.SocketBase;
 
-namespace PersonaServer
+using Persona;
+
+namespace Persona
 {
 	class Program
 	{

@@ -1,9 +1,9 @@
 ﻿using System.Runtime.Serialization;
 
-namespace PersonaServer
+namespace Persona
 {
 	[DataContract]
-	class PersonaResponse
+	public class PersonaResponse
 	{
 		[DataMember(Name = "status")]
 		public string Status { get; set; }

@@ -5,9 +5,9 @@ using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Web;
 
-namespace PersonaServer
+namespace Persona
 {
-	class PersonaException : Exception
+	public class PersonaException : Exception
 	{
 		public PersonaException(string message)
 			: base(message)
@@ -15,7 +15,7 @@ namespace PersonaServer
 		}
 	}
 
-	class PersonaClient
+	public class PersonaClient
 	{
 		public delegate void ResponseEvent(PersonaResponse response);
 		public delegate void ExceptionEvent(Exception exception);
