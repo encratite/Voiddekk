@@ -2,8 +2,34 @@ RPC API:
 
 // Out of game API
 
-	RegistrationResult Register(string username, string password)
-	bool Authenticate(string username, string password)
+	// Authentication
+
+	// This is the first out of two methods to log into an account
+	// Associate this connection with an external Mozilla Persona
+	// This might or might not result in a login into an actual game account on the system
+	// The result contains the following fields:
+	// 1. did the authentication succeed
+	// 2. (optional) is a game account available for this Persona
+	// 3. (optional) session key
+	// The case of the user already beign authenticated results in an exception instead
+	AuthenticationResult AuthenticatePersona(string assertion)
+
+	// This is the second out of two methods to log into an account
+	// It relies on having used AuthenticatePersona in the past
+	// It reuses the session key that was stored in a cookie and compares them to an entry in the database
+	// Reuses the same data structure for the response
+	// This also associates the connection with a Persona
+	AuthenticationResult AuthenticateSession(string key)
+
+	// The User must be associated with a Persona to register an account
+	// The result contains the following fields:
+	// 1. did the registration succeed
+	// 2. (optional) error message
+	// The cases of the user not being authenticated or already having registered results in an exception instead
+	// If the registration succeeded, the player is also logged into that game account at this point
+	RegistrationResult Register(string name)
+
+	// All of the remaining calls require a game account
 
 	// If name == null, it returns information about the account logged into
 	PlayerInfo GetPlayerInfo(string name)
