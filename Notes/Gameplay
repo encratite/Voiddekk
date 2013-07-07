@@ -41,18 +41,15 @@ Until the next turn of the owner
 Until triggered
 
 The resource system is not based on playing resource-generating cards.
-There is only one unified resource called energy.
-The number of energy points granted to a player depends on what turn it is and it is equal to $energy(turn).
+There is only one unified resource called resource points.
+The number of resource points granted to a player depends on what turn it is and it is equal to $resourcePoints(turn).
 This seemingly asymmetrical distribution is also an attempt at balancing out a first turn advantage.
-They do not carry over from one turn to the next one so it is in a player's best interest to spend all of them each turn.
+Unused resource points carry over from the current turn to the next one only up $resourceCarryOverLimit so it is in a player's best interest to spend all of them each turn.
 Players are also permitted to spend energy to draw additional cards fromn the top of their deck at the cost of $cardDrawingCost(draw).
 
 The board is subdivided into two symmetrical sides, each one of which is assigned to one of the two players.
 Each side features $laneCount lanes with $laneDepth positions each.
 Each one of these positions may be occupied by up to one unit of that player.
-There is also an additional center position for each lane, which can be occupied by only one player at a time, by up to one unit.
-This center position costs an additional energy point to deploy to and also costs an energy point to move to.
-Both players may move to the center position with a unit that had already been deployed.
 
 A player may only have units from their faction or the neutral faction in their deck.
 In general a unit may either attack or perform a move in a turn, not both.
@@ -92,6 +89,7 @@ Entangle: immobilises enemy unit for one turn when dealing damage
 Flying: does not suffer the damage penalty from being blocked, can target any enemy unit in its lane and the two adjacent lanes
 Haste: able to perform an attack right after deployment
 Heal(n): heals up to n missing life on the friendly unit in front of it
+Health link: all damage dealt to this unit is dealt to its owner aswell, healing effects work, too
 Huge: prevents attacks by ranged and flying units on the friendly units in the lane positioned behind it
 Immune: immune to the effects of abilities used against it, cannot have attachments used on it
 Life steal(n): this unit heals whenever it causes damage and the amount healed is equal to the damage dealt but cannot exceed n, healing does not mean it can gain more than its maximum life
@@ -99,7 +97,7 @@ Overrun: when an enemy unit is killed the remaining damage is applied to the uni
 Poison(n): when causing damage, the target will become poisoned for n turns, taking one damage from the poison at the beginning of each turn of the target's owner, poison damage does not stack, only the number of turns can be refreshed, the duration does not stack additively either
 Ranged: does not suffer the damage penalty from being blocked, does not take defensive damage and can target any enemy unit in its lane
 Reflect damage: reflects all damage dealt to it to the attacker, this is in addition to potential defensive damage
-Regeneration(n): tregenerates n life at the beginning of every turn of its owner
+Regenerate(n): tregenerates n life at the beginning of every turn of its owner
 Rush: can perform an attack after moving, but cannot attack and then move
 Shield(n): can block up to n damage until the shield is destroyed, it regenerates at the beginning of every turn of its owner, can also block damage from abilities
 Suicide: dies after performing one attack
