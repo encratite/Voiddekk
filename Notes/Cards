@@ -1,12 +1,23 @@
-king 国王
-monk 和尚
-peasant 农夫
-priest 牧师
-soldier 士兵
+beggar        乞丐
+cook          厨师
+fisherman     渔民
+judge         法官
+king          国王
+merchant      商人
+mercenary     佣兵
+monk          和尚
+peasant       农夫
+priest        牧师
+scholar       学者
+shepherd      羊倌
+soldier       士兵
 
-coward 懦夫
-murderer 凶手
-rapist 色魔
-thief
-traitor
-whore
+adulterer     奸夫
+coward        懦夫
+glutton       馋嘴
+murderer      凶手
+rapist        色魔
+swindler      骗子
+thief         小偷
+traitor       叛徒
+whore         妓女
