@@ -73,7 +73,7 @@ Primary properties of units:
 1. Name
 2. Limit per deck
 3. Resources
-4. Attack
+4. Damage
 5. Life
 6. Flags
 
@@ -83,19 +83,18 @@ Armour(n): reduces the damage from attacks by units by n, does not reduce damage
 Charge: attacks affect all enemy units in the lane
 Entangle: immobilises enemy unit for one turn when dealing damage
 Flying: does not suffer the damage penalty from being blocked, can target any enemy unit in its lane and the two adjacent lanes
-Haste: able to perform an attack right after deployment
 Heal(n): heals up to n missing life on the friendly unit in front of it
 Health link: all damage dealt to this unit is dealt to its owner aswell, healing effects work, too
-Huge: prevents attacks by ranged and flying units on a friendly unit positioned behind it
 Immune: immune to the effects of abilities used against it, cannot have attachments used on it
+Initiative: able to perform an attack right after deployment
 Life steal(n): this unit heals whenever it causes damage and the amount healed is equal to the damage dealt but cannot exceed n, healing does not mean it can gain more than its maximum life
 Overrun: when an enemy unit is killed the remaining damage is applied to the unit behind it or, if there is no such unit, to the enemy player
 Poison(n): when causing damage, the target will become poisoned for n turns, taking one damage from the poison at the beginning of each turn of the target's owner, poison damage does not stack, only the number of turns can be refreshed, the duration does not stack additively either
 Ranged: does not suffer the damage penalty from being blocked, does not take defensive damage and can target any enemy unit in its lane
-Reflect damage: reflects all damage dealt to it to the attacker, this is in addition to potential defensive damage
+Reflect damage: reflects all damage dealt to this unit to the attacker
 Regenerate(n): tregenerates n life at the beginning of every turn of its owner
 Rush: can perform an attack after moving, but cannot attack and then move
 Shield(n): can block up to n damage until the shield is destroyed, it regenerates at the beginning of every turn of its owner, can also block damage from abilities
 Suicide: dies after performing one attack
-Unstable: takes one damage at the beginning of every turn of the enemy player
+Thorns(n): deals n damage to melee and flying attackers
 Weaken(n): reduces the damage of a unit by n down to a minimum of 0 for one turn when dealing damage to an enemy unit

@@ -10,7 +10,7 @@ using SuperSocket.SocketBase;
 
 using Persona;
 
-namespace Persona
+namespace PersonaServer
 {
 	class Program
 	{
