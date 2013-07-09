@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Game\Game.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persona", "Persona\Persona.csproj", "{749CAF09-1152-4EC0-8872-E1773BDE08DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigurationTest", "Tests\ConfigurationTest\ConfigurationTest.csproj", "{A33127EA-BE2D-4F9E-8CEF-12AFC6F1C37C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +62,10 @@ Global
 		{749CAF09-1152-4EC0-8872-E1773BDE08DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{749CAF09-1152-4EC0-8872-E1773BDE08DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{749CAF09-1152-4EC0-8872-E1773BDE08DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A33127EA-BE2D-4F9E-8CEF-12AFC6F1C37C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A33127EA-BE2D-4F9E-8CEF-12AFC6F1C37C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A33127EA-BE2D-4F9E-8CEF-12AFC6F1C37C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A33127EA-BE2D-4F9E-8CEF-12AFC6F1C37C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,5 +78,6 @@ Global
 		{BE963C13-7D73-421C-BDA1-207C1DB843ED} = {407A2FED-919E-450C-8477-FE29C90D30ED}
 		{7374ACC5-C9AB-4A02-BE8D-5F2CD31C14A3} = {407A2FED-919E-450C-8477-FE29C90D30ED}
 		{BFF06C5D-7A23-4B83-AF98-ADAD27E03E30} = {407A2FED-919E-450C-8477-FE29C90D30ED}
+		{A33127EA-BE2D-4F9E-8CEF-12AFC6F1C37C} = {407A2FED-919E-450C-8477-FE29C90D30ED}
 	EndGlobalSection
 EndGlobal

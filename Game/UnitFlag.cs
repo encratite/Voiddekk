@@ -1,6 +1,6 @@
 ﻿namespace Game
 {
-	enum UnitFlagType
+	public enum UnitFlagType
 	{
 		Armour,
 		Charge,
@@ -23,9 +23,25 @@
 		Weaken,
 	}
 
-	class UnitFlag
+	public class UnitFlag
 	{
 		public UnitFlagType Type { get; set; }
 		public int Parameter { get; set; }
+
+		public UnitFlag()
+		{
+		}
+
+		public UnitFlag(UnitFlagType type)
+		{
+			Type = type;
+			Parameter = 0;
+		}
+
+		public UnitFlag(UnitFlagType type, int parameter)
+		{
+			Type = type;
+			Parameter = parameter;
+		}
 	}
 }

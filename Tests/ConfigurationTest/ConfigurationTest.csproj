@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BFF06C5D-7A23-4B83-AF98-ADAD27E03E30}</ProjectGuid>
+    <ProjectGuid>{A33127EA-BE2D-4F9E-8CEF-12AFC6F1C37C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PersonaServer</RootNamespace>
-    <AssemblyName>PersonaServer</AssemblyName>
+    <RootNamespace>ConfigurationTest</RootNamespace>
+    <AssemblyName>ConfigurationTest</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,23 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net">
-      <HintPath>..\..\References\log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="SuperSocket.Common">
-      <HintPath>..\References\SuperSocket.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="SuperSocket.SocketBase">
-      <HintPath>..\References\SuperSocket.SocketBase.dll</HintPath>
-    </Reference>
-    <Reference Include="SuperSocket.SocketEngine">
-      <HintPath>..\References\SuperSocket.SocketEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="SuperWebSocket">
-      <HintPath>..\References\SuperWebSocket.dll</HintPath>
+    <Reference Include="Nil">
+      <HintPath>..\..\References\Nil.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -64,9 +51,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Persona\Persona.csproj">
-      <Project>{749caf09-1152-4ec0-8872-e1773bde08dc}</Project>
-      <Name>Persona</Name>
+    <ProjectReference Include="..\..\Game\Game.csproj">
+      <Project>{4ec1907c-a4b4-4364-bca5-cac85f1f6a83}</Project>
+      <Name>Game</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
