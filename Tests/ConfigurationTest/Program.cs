@@ -11,7 +11,7 @@ namespace ConfigurationTest
 			Configuration configuration = new Configuration();
 			UnitType unit = new UnitType();
 			unit.Name = "Name";
-			unit.Image = "Faction/Name.png";
+			unit.InternalName = "FactionName";
 			unit.Limit = 4;
 			unit.Damage = 1;
 			unit.Life = 1;

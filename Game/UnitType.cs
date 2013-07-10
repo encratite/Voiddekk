@@ -9,7 +9,8 @@ namespace Game
 		[XmlIgnore]
 		public int? Id;
 		public string Name { get; set; }
-		public string Image { get; set; }
+		// Used for image paths
+		public string InternalName { get; set; }
 		public int Limit { get; set; }
 		public int Resources { get; set; }
 		public int Damage { get; set; }

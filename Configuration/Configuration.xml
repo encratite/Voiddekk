@@ -3,7 +3,7 @@
   <Units>
     <UnitType>
       <Name>Takagi Peasant</Name>
-      <Image>Takagi/TakagiPeasant.png</Image>
+      <InternalName>TakagiPeasant</InternalName>
       <Limit>4</Limit>
       <Resources>1</Resources>
       <Damage>1</Damage>
@@ -12,7 +12,7 @@
     </UnitType>
     <UnitType>
       <Name>Takagi Conscript</Name>
-      <Image>Takagi/TakagiConscript.png</Image>
+      <InternalName>TakagiConscript</InternalName>
       <Limit>4</Limit>
       <Resources>2</Resources>
       <Damage>2</Damage>
@@ -20,7 +20,7 @@
     </UnitType>
     <UnitType>
       <Name>Yari Spearman</Name>
-      <Image>Takagi/YariSpearman.png</Image>
+      <InternalName>TakagiYariSpearman</InternalName>
       <Limit>4</Limit>
       <Resources>2</Resources>
       <Damage>1</Damage>
@@ -34,7 +34,7 @@
     </UnitType>
     <UnitType>
       <Name>Yumi Archer</Name>
-      <Image>Takagi/YumiArcher.png</Image>
+      <InternalName>TakagiYumiArcher</InternalName>
       <Limit>4</Limit>
       <Resources>2</Resources>
       <Damage>2</Damage>
@@ -48,7 +48,7 @@
     </UnitType>
     <UnitType>
       <Name>Katana Samurai</Name>
-      <Image>Takagi/KatanaSamurai.png</Image>
+      <InternalName>TakagiKatanaSamurai</InternalName>
       <Limit>4</Limit>
       <Resources>3</Resources>
       <Damage>2</Damage>
@@ -62,7 +62,7 @@
     </UnitType>
     <UnitType>
       <Name>Mounted Samurai</Name>
-      <Image>Takagi/MountedSamurai.png</Image>
+      <InternalName>TakagiMountedSamurai</InternalName>
       <Limit>4</Limit>
       <Resources>3</Resources>
       <Damage>2</Damage>
@@ -76,7 +76,7 @@
     </UnitType>
     <UnitType>
       <Name>Shinobi</Name>
-      <Image>Takagi/Shinobi.png</Image>
+      <InternalName>TakagiShinobi</InternalName>
       <Limit>4</Limit>
       <Resources>3</Resources>
       <Damage>2</Damage>
@@ -90,7 +90,7 @@
     </UnitType>
     <UnitType>
       <Name>Oyumi Siege Crossbow</Name>
-      <Image>Takagi/OymuiSiegeCrossbow.png</Image>
+      <InternalName>TakagiOymuiSiegeCrossbow</InternalName>
       <Limit>4</Limit>
       <Resources>4</Resources>
       <Damage>3</Damage>
