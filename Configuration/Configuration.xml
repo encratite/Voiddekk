@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Units>
+    <UnitType>
+      <Name>Takagi Peasant</Name>
+      <Image>Takagi/TakagiPeasant.png</Image>
+      <Limit>4</Limit>
+      <Resources>1</Resources>
+      <Damage>1</Damage>
+      <Life>2</Life>
+      <Flags />
+    </UnitType>
+    <UnitType>
+      <Name>Takagi Conscript</Name>
+      <Image>Takagi/TakagiConscript.png</Image>
+      <Limit>4</Limit>
+      <Resources>2</Resources>
+      <Damage>2</Damage>
+      <Life>2</Life>
+    </UnitType>
+    <UnitType>
+      <Name>Yari Spearman</Name>
+      <Image>Takagi/YariSpearman.png</Image>
+      <Limit>4</Limit>
+      <Resources>2</Resources>
+      <Damage>1</Damage>
+      <Life>2</Life>
+      <Flags>
+        <UnitFlag>
+          <Type>Thorns</Type>
+          <Parameter>1</Parameter>
+        </UnitFlag>
+      </Flags>
+    </UnitType>
+    <UnitType>
+      <Name>Yumi Archer</Name>
+      <Image>Takagi/YumiArcher.png</Image>
+      <Limit>4</Limit>
+      <Resources>2</Resources>
+      <Damage>2</Damage>
+      <Life>1</Life>
+      <Flags>
+        <UnitFlag>
+          <Type>Ranged</Type>
+          <Parameter />
+        </UnitFlag>
+      </Flags>
+    </UnitType>
+    <UnitType>
+      <Name>Katana Samurai</Name>
+      <Image>Takagi/KatanaSamurai.png</Image>
+      <Limit>4</Limit>
+      <Resources>3</Resources>
+      <Damage>2</Damage>
+      <Life>4</Life>
+      <Flags>
+        <UnitFlag>
+          <Type>Regenerate</Type>
+          <Parameter>1</Parameter>
+        </UnitFlag>
+      </Flags>
+    </UnitType>
+    <UnitType>
+      <Name>Mounted Samurai</Name>
+      <Image>Takagi/MountedSamurai.png</Image>
+      <Limit>4</Limit>
+      <Resources>3</Resources>
+      <Damage>2</Damage>
+      <Life>4</Life>
+      <Flags>
+        <UnitFlag>
+          <Type>Charge</Type>
+          <Parameter />
+        </UnitFlag>
+      </Flags>
+    </UnitType>
+    <UnitType>
+      <Name>Shinobi</Name>
+      <Image>Takagi/Shinobi.png</Image>
+      <Limit>4</Limit>
+      <Resources>3</Resources>
+      <Damage>2</Damage>
+      <Life>2</Life>
+      <Flags>
+        <UnitFlag>
+          <Type>Initiative</Type>
+          <Parameter />
+        </UnitFlag>
+      </Flags>
+    </UnitType>
+    <UnitType>
+      <Name>Oyumi Siege Crossbow</Name>
+      <Image>Takagi/OymuiSiegeCrossbow.png</Image>
+      <Limit>4</Limit>
+      <Resources>4</Resources>
+      <Damage>3</Damage>
+      <Life>2</Life>
+      <Flags>
+        <UnitFlag>
+          <Type>Ranged</Type>
+          <Parameter />
+        </UnitFlag>
+      </Flags>
+    </UnitType>
+  </Units>
+</Configuration>

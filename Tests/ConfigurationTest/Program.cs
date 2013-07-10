@@ -10,8 +10,8 @@ namespace ConfigurationTest
 			Serialiser<Configuration> serialiser = new Serialiser<Configuration>("Configuration.xml");
 			Configuration configuration = new Configuration();
 			UnitType unit = new UnitType();
-			unit.Id = 101;
 			unit.Name = "Name";
+			unit.Image = "Faction/Name.png";
 			unit.Limit = 4;
 			unit.Damage = 1;
 			unit.Life = 1;
