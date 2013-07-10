@@ -41,6 +41,19 @@
       </Flags>
     </UnitType>
     <UnitType>
+      <Name>Oiran</Name>
+      <InternalName>TakagiOiran</InternalName>
+      <Resources>2</Resources>
+      <Damage>1</Damage>
+      <Life>3</Life>
+      <Flags>
+        <UnitFlag>
+          <Type>Heal</Type>
+          <Parameter>2</Parameter>
+        </UnitFlag>
+      </Flags>
+    </UnitType>
+    <UnitType>
       <Name>Naginata Bushi</Name>
       <InternalName>TakagiNaginataBushi</InternalName>
       <Resources>3</Resources>
@@ -55,7 +68,7 @@
     </UnitType>
     <UnitType>
       <Name>Mounted Bushi</Name>
-      <InternalName>TakagiMountedBushi/InternalName>
+      <InternalName>TakagiMountedBushi</InternalName>
       <Resources>3</Resources>
       <Damage>2</Damage>
       <Life>4</Life>
@@ -90,6 +103,19 @@
       </Flags>
     </UnitType>
     <UnitType>
+      <Name>Byakko</Name>
+      <InternalName>TakagiByakko</InternalName>
+      <Resources>4</Resources>
+      <Damage>3</Damage>
+      <Life>3</Life>
+      <Flags>
+        <UnitFlag>
+          <Type>Rush</Type>
+          <Parameter />
+        </UnitFlag>
+      </Flags>
+    </UnitType>
+    <UnitType>
       <Name>Ōyumi Siege Crossbow</Name>
       <InternalName>TakagiOymuiSiegeCrossbow</InternalName>
       <Resources>4</Resources>
@@ -115,12 +141,37 @@
       </Flags>
     </UnitType>
     <UnitType>
+      <Name>Seiryū</Name>
+      <InternalName>TakagiSeiryu</InternalName>
+      <Resources>5</Resources>
+      <Damage>4</Damage>
+      <Life>4</Life>
+      <Flags>
+        <UnitFlag>
+          <Type>Flying</Type>
+        </UnitFlag>
+      </Flags>
+    </UnitType>
+    <UnitType>
+      <Name>Genbu</Name>
+      <InternalName>TakagiGenbu</InternalName>
+      <Resources>5</Resources>
+      <Damage>3</Damage>
+      <Life>4</Life>
+      <Flags>
+        <UnitFlag>
+          <Type>Armoured</Type>
+          <Parameter>2</Parameter>
+        </UnitFlag>
+      </Flags>
+    </UnitType>
+    <UnitType>
       <Name>Daimyō</Name>
       <InternalName>TakagiDaimyo</InternalName>
       <Limit>1</Limit>
       <Resources>6</Resources>
       <Damage>4</Damage>
-      <Life>6</Life>
+      <Life>5</Life>
       <Flags>
         <UnitFlag>
           <Type>Armoured</Type>
