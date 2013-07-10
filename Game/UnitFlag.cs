@@ -10,6 +10,7 @@
 		HealthLink,
 		Immune,
 		Initiative,
+		Leader,
 		LifeSteal,
 		Overrun,
 		Poison,
@@ -19,6 +20,7 @@
 		Rush,
 		Shield,
 		Suicide,
+		Tactician,
 		Thorns,
 		Weaken,
 	}

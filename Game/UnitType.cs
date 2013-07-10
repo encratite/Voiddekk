@@ -11,7 +11,8 @@ namespace Game
 		public string Name { get; set; }
 		// Used for image paths
 		public string InternalName { get; set; }
-		public int Limit { get; set; }
+		// A limit of null means the default limit
+		public int? Limit { get; set; }
 		public int Resources { get; set; }
 		public int Damage { get; set; }
 		public int Life { get; set; }
