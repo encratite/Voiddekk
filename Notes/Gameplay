@@ -29,7 +29,9 @@ Types of cards available:
 
 3. Ability: instant effect, must have one of the following targets:
 Enemy unit
+Enemy unit and enemy position (for forced displacement abilities)
 Friendly unit
+Friendly unit and friendly position (for voluntary displacement abilities)
 Lane
 Global
 

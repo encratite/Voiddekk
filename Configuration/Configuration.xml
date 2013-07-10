@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Units>
-    <UnitType>
+    <Unit>
       <Name>Takagi Peasant</Name>
       <InternalName>TakagiPeasant</InternalName>
       <Resources>1</Resources>
       <Damage>1</Damage>
       <Life>2</Life>
-    </UnitType>
-    <UnitType>
+    </Unit>
+    <Unit>
       <Name>Takagi Conscript</Name>
       <InternalName>TakagiConscript</InternalName>
       <Resources>2</Resources>
       <Damage>2</Damage>
       <Life>2</Life>
-    </UnitType>
-    <UnitType>
+    </Unit>
+    <Unit>
       <Name>Yari Spearman</Name>
       <InternalName>TakagiYariSpearman</InternalName>
       <Resources>2</Resources>
@@ -27,8 +27,8 @@
           <Parameter>1</Parameter>
         </UnitFlag>
       </Flags>
-    </UnitType>
-    <UnitType>
+    </Unit>
+    <Unit>
       <Name>Yumi Archer</Name>
       <InternalName>TakagiYumiArcher</InternalName>
       <Resources>2</Resources>
@@ -39,8 +39,8 @@
           <Type>Ranged</Type>
         </UnitFlag>
       </Flags>
-    </UnitType>
-    <UnitType>
+    </Unit>
+    <Unit>
       <Name>Oiran</Name>
       <InternalName>TakagiOiran</InternalName>
       <Resources>2</Resources>
@@ -52,8 +52,8 @@
           <Parameter>2</Parameter>
         </UnitFlag>
       </Flags>
-    </UnitType>
-    <UnitType>
+    </Unit>
+    <Unit>
       <Name>Naginata Bushi</Name>
       <InternalName>TakagiNaginataBushi</InternalName>
       <Resources>3</Resources>
@@ -65,8 +65,8 @@
           <Parameter>1</Parameter>
         </UnitFlag>
       </Flags>
-    </UnitType>
-    <UnitType>
+    </Unit>
+    <Unit>
       <Name>Mounted Bushi</Name>
       <InternalName>TakagiMountedBushi</InternalName>
       <Resources>3</Resources>
@@ -77,8 +77,8 @@
           <Type>Charge</Type>
         </UnitFlag>
       </Flags>
-    </UnitType>
-    <UnitType>
+    </Unit>
+    <Unit>
       <Name>Shinobi</Name>
       <InternalName>TakagiShinobi</InternalName>
       <Resources>3</Resources>
@@ -89,8 +89,8 @@
           <Type>Initiative</Type>
         </UnitFlag>
       </Flags>
-    </UnitType>
-    <UnitType>
+    </Unit>
+    <Unit>
       <Name>Namahage</Name>
       <InternalName>TakagiNamahage</InternalName>
       <Resources>4</Resources>
@@ -101,8 +101,8 @@
           <Type>Overrun</Type>
         </UnitFlag>
       </Flags>
-    </UnitType>
-    <UnitType>
+    </Unit>
+    <Unit>
       <Name>Byakko</Name>
       <InternalName>TakagiByakko</InternalName>
       <Resources>4</Resources>
@@ -114,8 +114,8 @@
           <Parameter />
         </UnitFlag>
       </Flags>
-    </UnitType>
-    <UnitType>
+    </Unit>
+    <Unit>
       <Name>Ōyumi Siege Crossbow</Name>
       <InternalName>TakagiOymuiSiegeCrossbow</InternalName>
       <Resources>4</Resources>
@@ -127,8 +127,8 @@
           <Parameter />
         </UnitFlag>
       </Flags>
-    </UnitType>
-    <UnitType>
+    </Unit>
+    <Unit>
       <Name>Kasha</Name>
       <InternalName>TakagiKasha</InternalName>
       <Resources>4</Resources>
@@ -139,8 +139,8 @@
           <Type>Flying</Type>
         </UnitFlag>
       </Flags>
-    </UnitType>
-    <UnitType>
+    </Unit>
+    <Unit>
       <Name>Seiryū</Name>
       <InternalName>TakagiSeiryu</InternalName>
       <Resources>5</Resources>
@@ -151,8 +151,8 @@
           <Type>Flying</Type>
         </UnitFlag>
       </Flags>
-    </UnitType>
-    <UnitType>
+    </Unit>
+    <Unit>
       <Name>Genbu</Name>
       <InternalName>TakagiGenbu</InternalName>
       <Resources>5</Resources>
@@ -164,8 +164,8 @@
           <Parameter>2</Parameter>
         </UnitFlag>
       </Flags>
-    </UnitType>
-    <UnitType>
+    </Unit>
+    <Unit>
       <Name>Daimyō</Name>
       <InternalName>TakagiDaimyo</InternalName>
       <Limit>1</Limit>
@@ -182,6 +182,6 @@
           <Parameter>1</Parameter>
         </UnitFlag>
       </Flags>
-    </UnitType>
+    </Unit>
   </Units>
 </Configuration>
