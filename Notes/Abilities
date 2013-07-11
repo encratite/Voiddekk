@@ -1,0 +1,32 @@
+An ability must have one of the following targets:
+
+Enemy unit
+Enemy unit and enemy position (for forced displacement abilities)
+Friendly unit
+Friendly unit and friendly position (for voluntary displacement abilities)
+Lane
+Global
+Attachment
+State
+AttachmentOrState
+
+Additionally each effect of an ability has a target attached:
+
+TargetUnit
+LaneUnits
+EnemyLaneUnits
+AllUnits
+FriendlyUnits
+EnemyUnits
+ThisPlayer
+EnemyPlayer
+TargetedPosition
+
+Possible effects:
+
+DamagePlayer(n): deals n damage to player
+DamageUnit(n): deals n damage to unit
+DestroyUnit: instantly kills unit
+HealUnit(n): heal up to n life of the unit, can't go beyond the maximum life of the unit
+Poison(n): poisons the unit for n rounds
+Teleport: moves the unit to another position
