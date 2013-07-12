@@ -4,13 +4,13 @@ using System.Xml.Serialization;
 namespace Game
 {
 	[XmlType(TypeName = "Unit")]
-	public class UnitType: CardType
+	public class UnitCard: BaseCard
     {
 		public int Damage { get; set; }
 		public int Life { get; set; }
 		public List<UnitFlag> Flags { get; set; }
 
-		public UnitType()
+		public UnitCard()
 		{
 			Flags = new List<UnitFlag>();
 		}

@@ -4,11 +4,11 @@ namespace Game
 {
 	public class Configuration
 	{
-		public List<UnitType> Units;
+		public List<UnitCard> Units;
 
 		public Configuration()
 		{
-			Units = new List<UnitType>();
+			Units = new List<UnitCard>();
 		}
 	}
 }

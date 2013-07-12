@@ -64,3 +64,24 @@ Primary properties of units:
 4. Damage
 5. Life
 6. Flags
+
+An ability must have one of the following targets:
+
+Enemy unit
+Friendly unit
+Enemy unit and enemy position (for forced displacement abilities)
+Friendly unit and friendly position (for voluntary displacement abilities)
+Lane
+Global
+Attachment
+State
+
+A state can affect the following targets:
+
+Lane
+Global
+
+It must have one of the following durations:
+
+Until one of the next turns of the owner
+Or until triggered

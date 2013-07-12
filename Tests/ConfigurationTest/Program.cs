@@ -20,7 +20,7 @@ namespace ConfigurationTest
 		{
 			Serialiser<Configuration> serialiser = new Serialiser<Configuration>(ConfigurationPath);
 			Configuration configuration = new Configuration();
-			UnitType unit = new UnitType();
+			UnitCard unit = new UnitCard();
 			unit.Name = "Name";
 			unit.InternalName = "FactionName";
 			unit.Damage = 1;

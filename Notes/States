@@ -1,9 +1,0 @@
-A state can affect the following targets:
-
-Lane
-Global
-
-It must have one of the following durations:
-
-Until one of the next turns of the owner
-Or until triggered

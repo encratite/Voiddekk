@@ -1,7 +1,7 @@
 $deckSize = 50
 $initialHandSize = 6
 $fixedHandSize = 3
-$initialPlayerLife = 30
+$initialPlayerLife = 25
 $playerBleedingLifeThreshold = 10
 $bleedingDamage = 1
 $exhaustionDamage = 3

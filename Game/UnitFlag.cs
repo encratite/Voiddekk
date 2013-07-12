@@ -1,30 +1,5 @@
 ﻿namespace Game
 {
-	public enum UnitFlagType
-	{
-		Armour,
-		Charge,
-		Entangle,
-		Flying,
-		Heal,
-		HealthLink,
-		Immune,
-		Initiative,
-		Leader,
-		LifeSteal,
-		Overrun,
-		Poison,
-		Ranged,
-		ReflectDamage,
-		Regenerate,
-		Rush,
-		Shield,
-		Suicide,
-		Tactician,
-		Thorns,
-		Weaken,
-	}
-
 	public class UnitFlag
 	{
 		public UnitFlagType Type { get; set; }
