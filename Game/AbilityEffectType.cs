@@ -2,6 +2,7 @@
 {
 	public enum AbilityEffectType
 	{
+		DamageUnit,
 		Teleport,
 	}
 }

@@ -6,7 +6,12 @@ namespace Game
 	[XmlType(TypeName = "Ability")]
 	public class AbilityCard : BaseCard
 	{
-		AbilityTarget Target { get; set; }
-		List<AbilityEffect> Effects { get; set; }
+		public AbilityTarget Target { get; set; }
+		public List<AbilityEffect> Effects { get; set; }
+
+		public AbilityCard()
+		{
+			Effects = new List<AbilityEffect>();
+		}
 	}
 }

@@ -1,6 +1,6 @@
 ﻿namespace Game
 {
-	enum AbilityTarget
+	public enum AbilityTarget
 	{
 		EnemyUnit,
 		FriendlyUnit,

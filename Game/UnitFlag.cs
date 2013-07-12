@@ -1,5 +1,8 @@
-﻿namespace Game
+﻿using System.Xml.Serialization;
+
+namespace Game
 {
+	[XmlType(TypeName = "Flag")]
 	public class UnitFlag
 	{
 		public UnitFlagType Type { get; set; }

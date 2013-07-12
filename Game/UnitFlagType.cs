@@ -2,6 +2,8 @@
 {
 	public enum UnitFlagType
 	{
+		// Flags units naturally spawn with
+
 		// Reduces the damage from attacks by units by n, does not reduce damage from abilities
 		Armour,
 		// Attacks affect all enemy units in the lane
@@ -46,5 +48,10 @@
 		Thorns,
 		// Reduces the damage of a unit by n down to a minimum of 0 for one turn when dealing damage to an enemy unit
 		// Weaken,
+
+		// Flags exclusively associated with attachments and abilities
+
+		// Increases the damage of the unit by n
+		Strong,
 	}
 }

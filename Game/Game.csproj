@@ -41,6 +41,8 @@
     <Compile Include="AbilityEffect.cs" />
     <Compile Include="AbilityEffectType.cs" />
     <Compile Include="AbilityTarget.cs" />
+    <Compile Include="AttachmentCard.cs" />
+    <Compile Include="AttachmentCardType.cs" />
     <Compile Include="BaseCard.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="Constants.cs" />
