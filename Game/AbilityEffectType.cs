@@ -1,7 +1,7 @@
 ﻿namespace Game
 {
-	class AbilityEffectType
+	public enum AbilityEffectType
 	{
-		Displace,
+		Teleport,
 	}
 }

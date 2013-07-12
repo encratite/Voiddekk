@@ -37,11 +37,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CardType.cs" />
+    <Compile Include="AbilityCard.cs" />
+    <Compile Include="AbilityEffect.cs" />
+    <Compile Include="AbilityEffectType.cs" />
+    <Compile Include="AbilityTarget.cs" />
+    <Compile Include="BaseCard.cs" />
     <Compile Include="Configuration.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="UnitFlag.cs" />
-    <Compile Include="UnitType.cs" />
+    <Compile Include="UnitCard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitFlagType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

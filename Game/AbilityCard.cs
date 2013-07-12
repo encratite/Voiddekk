@@ -4,7 +4,9 @@ using System.Xml.Serialization;
 namespace Game
 {
 	[XmlType(TypeName = "Ability")]
-	class AbilityCard : BaseCard
+	public class AbilityCard : BaseCard
 	{
+		AbilityTarget Target { get; set; }
+		List<AbilityEffect> Effects { get; set; }
 	}
 }

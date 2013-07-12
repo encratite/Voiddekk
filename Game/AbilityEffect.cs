@@ -1,11 +1,11 @@
-﻿namespace Game
+﻿using System.Xml.Serialization;
+
+namespace Game
 {
-	enum AbilityEffectType
+	[XmlType(TypeName = "Effect")]
+	public class AbilityEffect
 	{
-
-	}
-
-	class AbilityEffect
-	{
+		AbilityEffectType Type { get; set; }
+		int? Parameter { get; set; }
 	}
 }
