@@ -20,8 +20,8 @@ namespace ConfigurationTest
 			unit.Resources = 1;
 			unit.Damage = 1;
 			unit.Life = 1;
-			UnitFlag flag = new UnitFlag(UnitFlagType.Regenerate, 1);
-			unit.Flags.Add(flag);
+			UnitFlag flag1 = new UnitFlag(UnitFlagType.Regenerate, 1);
+			unit.Flags.Add(flag1);
 			configuration.Units.Add(unit);
 
 			AbilityCard ability = new AbilityCard();
@@ -38,9 +38,21 @@ namespace ConfigurationTest
 			attachment.InternalName = "FactionName";
 			attachment.Resources = 1;
 			attachment.Type = AttachmentCardType.Friendly;
-			UnitFlag attachmentFlag = new UnitFlag(UnitFlagType.Strong, 1);
-			attachment.Flags.Add(attachmentFlag);
+			UnitFlag flag2 = new UnitFlag(UnitFlagType.Strong, 1);
+			attachment.Flags.Add(flag2);
 			configuration.Attachments.Add(attachment);
+
+			StateCard state = new StateCard();
+			state.Name = "Name";
+			state.InternalName = "FactionName";
+			state.Resources = 1;
+			state.Scope = StateScope.Global;
+			state.UnitTarget = StateUnitTarget.Friendly;
+			state.UnitFlags.Add(flag2);
+			state.Trigger = StateTrigger.OnAttack;
+			state.TriggerEffects.Add(effect);
+
+			configuration.States.Add(state);
 
 			serialiser.Store(configuration);
 
