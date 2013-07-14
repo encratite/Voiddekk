@@ -46,6 +46,10 @@
     <Compile Include="BaseCard.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="StateCard.cs" />
+    <Compile Include="StateScope.cs" />
+    <Compile Include="StateTrigger.cs" />
+    <Compile Include="StateUnitTarget.cs" />
     <Compile Include="UnitFlag.cs" />
     <Compile Include="UnitCard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
